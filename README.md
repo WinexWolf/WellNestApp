@@ -1,46 +1,41 @@
-# SRID Starter Code 
+# WellNest 
 
-This code is written for the Fall 2023 Recitation for CMU's course: 18658 - Software Requirements & Interaction Design. This code will be used for the hands-on demo during the recitation session. ([Slides Here.](https://docs.google.com/presentation/d/13THbqFKk8UN3tv0Cx4gYjIgT5fPDfYP9reTJesZ5EzU/edit?usp=sharing 
-))
+## Embrace WellNess. Embrace WellNest
 
-We will be attempting to implement [this Figma Prototype:](https://www.figma.com/file/OEZPp3BOKRW2d8xV4yFBQy/Untitled?type=design&node-id=0%3A1&mode=design&t=PUOS9D33g798pmSZ-1)
+WellNest is your all-in-one solution to bridge the gap between mental health awareness, prevention, and treatment. Especially, if you are a young professional!
 
-[<img src="public/Group 7.png">](http://google.com.au/)
+## Technology Stack
 
-## Tasks to Complete 
-As a part of the demo, we will work on solving 6 tasks that are outlined in `src/app.js`. The solutions to each of these can be found in the respective branches: 
+Our technology stack at WellNest comprises:
 
-```
-master       <-- Contains only the starter code
-Checkpoint-1
-Checkpoint-2
-Checkpoint-3
-Checkpoint-4
-Checkpoint-5
-Checkpoint-6 <-- Contains the complete solution
-```
-Please attempt each task individually and only refer the solutions if you are stuck. 
+1. **React**:  
+    - **Efficient Component-Based Architecture**: React's component-based structure allows us to build reusable UI components, which helps in faster development. 
 
-## Starter Code Setup
+2. **Material UI**:  
+    - **Consistent Design**: Material UI offers a range of pre-designed React components and so it ensures design consistency across the app. Moreover, Material UI stands out as a UI framework offering sleek and modern components. This aspect will be particularly appealing to our young professional stakeholders, captivating them with its contemporary design!
 
-The code in the master branch has been set up using Create React App, as well as the installation and setup docs found on the official Tailwind CSS and Material UI docs. The steps used to setup the starter include: 
+3. **Tailwind CSS**:  
+    - **Utility-First Styling Approach**: Tailwind CSS simplifies styling by providing utility classes, which allows developers to quickly create and style components by applying these classes directly in the HTML, speeding up the development process.
 
-1. Bootstrapping the project with ([Create React App](https://github.com/facebook/create-react-app)).
-2. Install Material UI ([Docs](https://mui.com/material-ui/getting-started/installation/) )
-3. Install Tailwind CSS ([Docs](https://tailwindcss.com/docs/installation))
-4. Setup Material UI to work with Tailwind CSS ([Docs](https://mui.com/base-ui/guides/working-with-tailwind-css/))
-5. Fix a Material UI bug ([StackOverflow](https://stackoverflow.com/questions/75202373/button-in-material-ui-is-transparent-when-loading))
+## Style Guide
 
+Our style guide at WellNest comprises:
 
-## Available Scripts
+## Operational Instructions
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm install`
+
+npm install is a command used in Node.js development to install dependencies for a project. When you run `npm install`, it looks for a package.json file in the current directory and fetches the packages listed in package.json from the npm registry and installs them in a node_modules directory within your project. 
+
+### `npm run start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+## Limitations
 
