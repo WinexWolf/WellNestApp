@@ -39,3 +39,14 @@ You may also see any lint errors in the console.
 
 ## Limitations
 
+Our Product Increment 1 (MVP) of WellNest has the following limitations:
+
+1. **Matching with Therapist Feature**: 
+
+    - **Simulated Google Workspace Integration**: Our current implementation of WellNest, the user cannot integrate with Google Workspace. Instead, we will operate in simulated environment and provide the user with a pre-determined time and date for the appointment with the matched therapist.  
+    - **Absence of Algorithmic Matching**: At present, WellNest does not employ sophisticated algorithms for matching therapists. Instead, it just matces the user with a pre-determined list of therapists.  
+    - **No Database Storage Functionality**: As of now, WellNest does not possess the functionality to store matched therapist data in a database. Hence, the user cannot retain or retrieve information of upcoming appoitments and therapists they have been matched with!  
+
+2. **Mood Tracking Feature**: 
+
+3. **Play to Earn Feature**: 
