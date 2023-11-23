@@ -48,6 +48,7 @@ Our Product Increment 1 (MVP) of WellNest has the following limitations:
     - **No Database Storage Functionality**: As of now, WellNest doesn't possess the functionality to store matched therapist data in a database. Hence, the user cannot retain or retrieve information of upcoming appoitments and therapists they have been matched with!  
 
 2. **Mood Tracking Feature**: 
+
  - **No Sharing Mood Data on Third-Party applications**: Currently, WellNest doesn't allow sharing mood data with third-party applications. Instead, teh system will only notify the user that the mood data is successfully shared to simulate the behavior of sharing the mood data through a third-party application!
  - **No Database Storage Functionality**: At present, WellNest doesn't possess the functionality to store mood data in a database. Hence, the user cannot retain or access historical mood information.
 
