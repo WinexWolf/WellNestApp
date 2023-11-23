@@ -1,5 +1,7 @@
 import "./App.css";
 import BottomNavbar from "./js/navbar";
+//import Modal from "./js/modal";
+import TitleBar from "./js/titlebar";
 // Tasks to complete:
 // 1. Create a Header component using Material UI (AppBar)
 // 2. Create a Todo Item component and customize styling using Tailwind
@@ -9,11 +11,23 @@ import BottomNavbar from "./js/navbar";
 // 6. Persist and read state from local storage
 
 function App() {
+    const handleCancel = () => {
+      console.log("Cancel button clicked!");
+      // Add your cancel logic here
+    };
     return (
-        <div className="App">
-            <h1 className="text-3xl font-bold underline">Hello world!</h1>
-            <BottomNavbar/>
-        </div>
+      <div className="App">
+        {/*             <h1 className="text-3xl font-bold underline">Hello world!</h1>
+         */}
+        {/*  <Modal
+          modalText="Your Mood Data is Successfully Shared on WhatsApp"
+          showCancelButton
+          onCancel={handleCancel}
+        /> */}
+        <TitleBar showBackButton />
+
+        <BottomNavbar />
+      </div>
     );
 }
 
