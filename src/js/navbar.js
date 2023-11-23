@@ -24,7 +24,7 @@ const BottomNavbar = () => {
   );
 
   return (
-    <nav className="fixed bottom-0 w-auto">
+    <nav className="fixed bottom-0 w-auto shadow-md">
       <div className="flex w-auto justify-between px-4">
         {renderItem("Therapy")}
         {renderItem("Mood")}
