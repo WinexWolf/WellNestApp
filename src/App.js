@@ -1,5 +1,5 @@
 import "./App.css";
-
+import BottomNavbar from "./js/navbar";
 // Tasks to complete:
 // 1. Create a Header component using Material UI (AppBar)
 // 2. Create a Todo Item component and customize styling using Tailwind
@@ -12,6 +12,7 @@ function App() {
     return (
         <div className="App">
             <h1 className="text-3xl font-bold underline">Hello world!</h1>
+            <BottomNavbar/>
         </div>
     );
 }
