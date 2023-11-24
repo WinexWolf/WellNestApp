@@ -53,3 +53,5 @@ Our Product Increment 1 (MVP) of WellNest has the following limitations:
  - **No Database Storage Functionality**: At present, WellNest doesn't possess the functionality to store mood data in a database. Hence, the user cannot retain or access historical mood information.
 
 3. **Play to Earn Feature**: 
+
+ - **No Database Storage Functionality**: At present, WellNest doesn't possess the functionality to store rewards earned throught dail exercises in a database. Hence, the user cannot retain or access rewrards realted information.
