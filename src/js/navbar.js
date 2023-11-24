@@ -20,13 +20,21 @@ const BottomNavbar = () => {
           : "bg-white hover:bg-gray-200 text-black"
       }`}
     >
-      <Link to={path}>{item}</Link>
+      <Link
+        style={{
+          textDecoration: "none", // Remove underline
+          color: "inherit", // Inherit the color from the parent
+        }}
+        to={path}
+      >
+        {item}
+      </Link>
     </div>
   );
 
   return (
-    <nav className="fixed bottom-0 w-auto shadow-md">
-      <div className="flex w-auto justify-between px-4">
+    <nav className="fixed bottom-0 w-auto shadow-md ">
+      <div className="flex w-auto justify-between px-4 ">
         {renderItem("Therapy", "/")}
         {renderItem("Mood", "/mood")}
         {renderItem("Play", "/")}
