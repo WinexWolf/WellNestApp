@@ -1,6 +1,7 @@
 // BottomNavbar.js
 
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const BottomNavbar = () => {
   const [activeItem, setActiveItem] = useState(null);
@@ -9,7 +10,7 @@ const BottomNavbar = () => {
     setActiveItem(item);
   };
 
-  const renderItem = (item) => (
+  const renderItem = (item, path) => (
     <div
       key={item}
       onClick={() => handleItemClick(item)}
@@ -19,17 +20,17 @@ const BottomNavbar = () => {
           : "bg-white hover:bg-gray-200 text-black"
       }`}
     >
-      {item}
+      <Link to={path}>{item}</Link>
     </div>
   );
 
   return (
     <nav className="fixed bottom-0 w-auto shadow-md">
       <div className="flex w-auto justify-between px-4">
-        {renderItem("Therapy")}
-        {renderItem("Mood")}
-        {renderItem("Play")}
-        {renderItem("Rewards")}
+        {renderItem("Therapy", "/")}
+        {renderItem("Mood", "/mood")}
+        {renderItem("Play", "/")}
+        {renderItem("Rewards", "/")}
       </div>
     </nav>
   );

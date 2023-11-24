@@ -1,5 +1,8 @@
 import "./App.css";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import BottomNavbar from "./js/navbar";
+import Mood from "./js/mood"; // Import your Mood component
 //import Modal from "./js/modal";
 import TitleBar from "./js/titlebar";
 // Tasks to complete:
@@ -11,24 +14,37 @@ import TitleBar from "./js/titlebar";
 // 6. Persist and read state from local storage
 
 function App() {
-    const handleCancel = () => {
-      console.log("Cancel button clicked!");
-      // Add your cancel logic here
-    };
-    return (
-      <div className="App">
-        {/*             <h1 className="text-3xl font-bold underline">Hello world!</h1>
-         */}
-        {/*  <Modal
-          modalText="Your Mood Data is Successfully Shared on WhatsApp"
-          showCancelButton
-          onCancel={handleCancel}
-        /> */}
-        <TitleBar showBackButton />
-
+  const handleCancel = () => {
+    console.log("Cancel button clicked!");
+    // Add your cancel logic here
+  };
+  return (
+    <Router>
+      <>
+        <div className="App"></div>
+{/*         <TitleBar showBackButton />
+ */}        <Switch>
+          <Route path="/mood" component={Mood} />
+        </Switch>
         <BottomNavbar />
-      </div>
-    );
+      </>
+    </Router>
+    // <Router>
+
+    // {/*
+    //         {/*             <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    //          */}
+    //         {/*  <Modal
+    //           modalText="Your Mood Data is Successfully Shared on WhatsApp"
+    //           showCancelButton
+    //           onCancel={handleCancel}
+    //         /> */}
+    //         <TitleBar showBackButton />
+
+    //         <BottomNavbar />
+    //       </div>
+    //           </Router> */}
+  );
 }
 
 export default App;
