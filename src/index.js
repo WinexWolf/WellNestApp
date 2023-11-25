@@ -9,6 +9,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/root";
 import ErrorPage from "./routes/error";
 import Layout from "./routes/layout";
+import Features from "./routes/features";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
         path: "/",
         element: <Root />
       },
+      {
+        path: "/features",
+        element: <Features />
+      },
+
       {
         path: "*",
         element: <ErrorPage />
