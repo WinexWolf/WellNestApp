@@ -49,9 +49,9 @@ Our Product Increment 1 (MVP) of WellNest has the following limitations:
 
 2. **Mood Tracking Feature**: 
 
- - **No Sharing Mood Data on Third-Party applications**: Currently, WellNest doesn't allow sharing mood data with third-party applications. Instead, teh system will only notify the user that the mood data is successfully shared to simulate the behavior of sharing the mood data through a third-party application!
- - **No Database Storage Functionality**: At present, WellNest doesn't possess the functionality to store mood data in a database. Hence, the user cannot retain or access historical mood information.
+    - **No Sharing Mood Data on Third-Party applications**: Currently, WellNest doesn't allow sharing mood data with third-party applications. Instead, teh system will only notify the user that the mood data is successfully shared to simulate the behavior of sharing the mood data through a third-party application!
+    - **No Database Storage Functionality**: At present, WellNest doesn't possess the functionality to store mood data in a database. Hence, the user cannot retain or access historical mood information.
 
 3. **Play to Earn Feature**: 
 
- - **No Database Storage Functionality**: At present, WellNest doesn't possess the functionality to store rewards earned throught dail exercises in a database. Hence, the user cannot retain or access rewrards realted information.
+    - **No Database Storage Functionality**: At present, WellNest doesn't possess the functionality to store rewards earned throught dail exercises in a database. Hence, the user cannot retain or access rewrards realted information.
