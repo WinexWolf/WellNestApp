@@ -9,8 +9,13 @@ function Mood2() {
 
   const toggleList = () => {
     setIsListOpen(!isListOpen);
-  };
-
+    };
+    
+const names = [
+  { value: 10, name: "Darth Vader" },
+  { value: 20, name: "Tom Hanks" },
+  { value: 30, name: "Beyonce" },
+];
   return (
     <>
       <TitleBar showBackButton link={'/mood1'} />
@@ -22,7 +27,7 @@ function Mood2() {
             src={DarthVader}
             alt="Darth Vader"
           />
-                  <BasicSelect/>
+                  <BasicSelect label={"Select the Avatar to chat with"} list={names} />
         </div>
       </div>
     </>

@@ -5,27 +5,32 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
-export default function BasicSelect() {
-  const [age, setAge] = React.useState('');
+export default function BasicSelect({ label, list }) {
+  const [value, setValue] = React.useState('');
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setValue(event.target.value);
   };
 
   return (
     <Box className="mt-6" sx={{ minWidth: 328 }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Select the Avatar to chat with</InputLabel>
+        <InputLabel id="demo-simple-select-label">{label}</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={age}
-          label="Age"
+          value={value}
+          label="Value"
           onChange={handleChange}
         >
-          <MenuItem value={10}>Darth Vader</MenuItem>
-          <MenuItem value={20}>Tom Hanks</MenuItem>
-          <MenuItem value={30}>Beyonce</MenuItem>
+          {list && list.map((item) => (
+            <MenuItem
+                  key={item.value}
+                  value={item.value}
+            >
+              {item.name}
+            </MenuItem>
+          ))}
         </Select>
       </FormControl>
     </Box>
