@@ -2,7 +2,7 @@ import React from "react";
 import MoodTrack from "../images/moodTrack.png";
 import { Link } from "react-router-dom";
 import TitleBar from "./titlebar";
-import DartVader from '../images/Darth Vader.png';
+import DarthVader from '../images/DarthVader.png';
 import Face from "../images/Face4.png";
 import ArrowIcon from "../images/Arrow.png";
 
@@ -19,18 +19,26 @@ function Mood1() {
         <div className="w-[231px] h-[77px] text-center text-neutral-800 text-base font-normal font-['Cabin']">
           Express yourself and have a conversation with one of your favorite
           celebrities or characters with the help of WellNest’s advanced AI
-          solution.{" "}
+          solution.
         </div>
       </div>
       <img
-        className="w-[61px] h-[57px] left-[268px] top-[217px] absolute border"
-        src={DartVader}
+        className="w-[80px] h-[76px] left-[268px] top-[217px] absolute border"
+        src={DarthVader}
       />
       <div className="left-[99px] top-[358px] absolute justify-start items-start inline-flex">
         <div className="w-[153px] h-9 px-4 py-1.5 bg-sky-600 rounded justify-center items-center gap-2 flex">
-          <div className="text-center text-white text-sm font-medium font-cabin uppercase leading-normal tracking-tight">
-            Enter
-          </div>
+          <Link
+            style={{
+              textDecoration: "none", // Remove underline
+              color: "inherit", // Inherit the color from the parent
+            }}
+            to={"/mood2"}
+          >
+            <div className="text-center text-white text-sm font-medium font-cabin uppercase leading-normal tracking-tight">
+              Enter
+            </div>
+          </Link>
           <img className="w-4 h-4 ml-2" src={ArrowIcon} alt="Arrow Icon" />
         </div>
       </div>
@@ -60,9 +68,17 @@ function Mood1() {
           </div>
           <div className="w-[157px] h-9 left-[101px] top-[151px] absolute justify-start items-start inline-flex">
             <div className="w-[157px] h-9 px-4 py-1.5 bg-sky-600 rounded justify-center items-center gap-2 flex">
-              <div className="text-center text-white text-sm font-medium font-cabin uppercase leading-normal tracking-tight">
-                Enter
-              </div>
+              <Link
+                style={{
+                  textDecoration: "none", // Remove underline
+                  color: "inherit", // Inherit the color from the parent
+                }}
+                to={"/mood3"}
+              >
+                <div className="text-center text-white text-sm font-medium font-cabin  uppercase leading-normal tracking-tight">
+                  Enter
+                </div>
+              </Link>
             </div>
           </div>
         </div>

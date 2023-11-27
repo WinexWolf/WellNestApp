@@ -3,15 +3,9 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import BottomNavbar from "./js/navbar";
 import Mood0 from "./js/mood0";
-import Mood1 from "./js/mood1"; // Import your Mood component
-// Import your Mood component
-// Tasks to complete:
-// 1. Create a Header component using Material UI (AppBar)
-// 2. Create a Todo Item component and customize styling using Tailwind
-// 3. Create two lists: Pending and Completed Tasks with Static Props
-// 4. Make the lists work with dynamic props & prop drilling
-// 5. Create a Modal component for adding a new task
-// 6. Persist and read state from local storage
+import Mood1 from "./js/mood1";
+import Mood2 from "./js/mood2"; 
+import Mood3 from "./js/mood3";
 
 function App() {
   const handleCancel = () => {
@@ -27,6 +21,8 @@ function App() {
         <Switch>
           <Route path="/mood" component={Mood0} />
           <Route path="/mood1" component={Mood1} />
+          <Route path="/mood2" component={Mood2} />
+          <Route path="/mood3" component={Mood3} />
         </Switch>
         <BottomNavbar />
       </>
