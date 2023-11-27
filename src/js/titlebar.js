@@ -3,7 +3,7 @@ import React from "react";
 const TitleBar = ({ showBackButton }) => {
   return (
     <div className="flex items-center justify-between bg-blue-500 h-14 text-white font-cabin font-medium uppercase text-sm leading-6 pt-0 pb-2 px-4">
-      <div className="w-auto h-7 text-white text-left  text-sm font-medium font-cabin uppercase leading-normal tracking-tight">
+      <div className="w-full h-7 text-white text-left  text-sm font-medium font-cabin uppercase leading-normal tracking-tight">
         WELLNEST: MOOD TRACKING FEATURE
       </div>
       {showBackButton && (

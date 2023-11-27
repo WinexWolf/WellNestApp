@@ -2,9 +2,9 @@ import "./App.css";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import BottomNavbar from "./js/navbar";
-import Mood from "./js/mood"; // Import your Mood component
-//import Modal from "./js/modal";
-import TitleBar from "./js/titlebar";
+import Mood0 from "./js/mood0";
+import Mood1 from "./js/mood1"; // Import your Mood component
+// Import your Mood component
 // Tasks to complete:
 // 1. Create a Header component using Material UI (AppBar)
 // 2. Create a Todo Item component and customize styling using Tailwind
@@ -22,9 +22,11 @@ function App() {
     <Router>
       <>
         <div className="App"></div>
-{/*         <TitleBar showBackButton />
- */}        <Switch>
-          <Route path="/mood" component={Mood} />
+        {/*         <TitleBar showBackButton />
+         */}{" "}
+        <Switch>
+          <Route path="/mood" component={Mood0} />
+          <Route path="/mood1" component={Mood1} />
         </Switch>
         <BottomNavbar />
       </>

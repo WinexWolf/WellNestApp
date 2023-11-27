@@ -1,5 +1,6 @@
 import React from "react";
 import MoodTrack from "../images/moodTrack.png";
+import { Link } from "react-router-dom";
 
 function Mood0() {
   return (
@@ -21,9 +22,17 @@ function Mood0() {
       </div>
 
       <div className="bg-sky-600 rounded shadow px-4 py-2">
-        <div className="text-white text-sm font-medium font-cabin uppercase">
-          Continue
-        </div>
+        <Link
+          style={{
+            textDecoration: "none", // Remove underline
+            color: "inherit", // Inherit the color from the parent
+          }}
+          to={'/mood1'}
+        >
+          <div className="text-white text-sm font-medium font-cabin uppercase">
+            Continue
+          </div>
+        </Link>
       </div>
     </div>
   );
