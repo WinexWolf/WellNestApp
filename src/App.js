@@ -6,6 +6,7 @@ import Mood0 from "./js/mood0";
 import Mood1 from "./js/mood1";
 import Mood2 from "./js/mood2";
 import Mood3 from "./js/mood3";
+import Mood4 from "./js/mood4";
 
 function App() {
   const handleCancel = () => {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/mood1" element={<Mood1 />} />
             <Route path="/mood2" element={<Mood2 />} />
             <Route path="/mood3" element={<Mood3 />} />
+            <Route path="/mood4" element={<Mood4 />} />
           </Routes>
           <BottomNavbar />
         </div>
