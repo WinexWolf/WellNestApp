@@ -43,15 +43,15 @@ Our Product Increment 1 (MVP) of WellNest has the following limitations:
 
 1. **Matching with Therapist Feature**: 
 
-    - **Simulated Google Workspace Integration**: Our current implementation of WellNest, the user cannot integrate with Google Workspace. Instead, we will operate in simulated environment and provide the user with a pre-determined time and date for the appointment with the matched therapist.  
-    - **Absence of Algorithmic Matching**: At present, WellNest doesn't employ sophisticated algorithms for matching therapists. Instead, it just matces the user with a pre-determined list of therapists.  
-    - **No Database Storage Functionality**: As of now, WellNest doesn't possess the functionality to store matched therapist data in a database. Hence, the user cannot retain or retrieve information of upcoming appoitments and therapists they have been matched with!  
+    - **Simulated Google Workspace Integration**: In our current implementation of WellNest, the user cannot integrate with Google Workspace. Instead, we will operate in a simulated environment and provide the user with a pre-determined time and date for the appointment with the matched therapist. 
+    - **Absence of Algorithmic Matching**: At present, WellNest doesn't employ sophisticated algorithms for matching therapists. Instead, it just matches the user with a pre-determined list of therapists.  
+    - **No Database Storage Functionality**: As of now, WellNest doesn't possess the functionality to store matched therapist data in a database. Hence, the user cannot retain or retrieve information about upcoming appointments and therapists they have been matched with!
 
 2. **Mood Tracking Feature**: 
 
-    - **No Sharing Mood Data on Third-Party applications**: Currently, WellNest doesn't allow sharing mood data with third-party applications. Instead, the system will only notify the user that the mood data is successfully shared to simulate the behavior of sharing the mood data through a third-party application!
+    - **No Sharing Mood Data on Third-Party Applications**: Currently, WellNest doesn't allow sharing Mood data with third-party applications. Instead, the system will only notify the user that the mood data is successfully shared to simulate the behavior of sharing the mood data through a third-party application!
     - **No Database Storage Functionality**: At present, WellNest doesn't possess the functionality to store mood data in a database. Hence, the user cannot retain or access historical mood information.
 
 3. **Play to Earn Feature**: 
 
-    - **No Database Storage Functionality**: At present, WellNest doesn't possess the functionality to store rewards earned throught dail exercises in a database. Hence, the user cannot retain or access rewrards realted information.
+    - **No Database Storage Functionality**: At present, WellNest doesn't possess the functionality to store rewards earned through daily exercises in a database. Hence, the user cannot retain or access rewards-related information.
