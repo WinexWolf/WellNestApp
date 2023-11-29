@@ -7,16 +7,15 @@ import { CardActionArea } from "@mui/material";
 
 const ActionAreaCard = ({ imageLink, featureName, description, ...props }) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ width: 250 }}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
           image={`${imageLink}`}
-          alt="green iguana"
+          alt={`${featureName}`}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" align="center">
             {featureName}
           </Typography>
           <Typography variant="body2" color="text.secondary">
