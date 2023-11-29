@@ -7,7 +7,6 @@ import {
   CircularProgress,
 } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
-import { useSpring, animated } from "react-spring";
 
 function Mood4() {
   const [popIndex, setPopIndex] = useState(null);
@@ -40,15 +39,11 @@ function Mood4() {
         top: 0,
         left: 0,
         cursor: "pointer",
+        transition: "transform 0.3s ease-in-out", // Add transition
+        transform: isPopped ? "scale(1.5)" : "scale(1)", // Scale on hover
       },
     };
   };
-
-  const popAnimation = useSpring({
-    from: { thickness: 8 },
-    to: { thickness: 12 },
-    reset: true,
-  });
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -63,7 +58,7 @@ function Mood4() {
         <div className="flex justify-end items-end w-full mr-6 mt-10">
           <Button
             variant="contained"
-            href="/mood4"
+            href="/mood5"
             style={{ fontSize: "10px", backgroundColor: "#0087E8" }}
             endIcon={
               <IconButton color="inherit">
@@ -97,13 +92,12 @@ function Mood4() {
             }}
           ></div>
           {data.map((item, index) => (
-            <animated.div
+            <div
               key={index}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
               style={{
                 ...getBarStyles(index),
-                ...popAnimation,
               }}
             >
               <CircularProgress
@@ -114,7 +108,7 @@ function Mood4() {
                 style={{ color: getBarStyles(index).color }}
                 sx={{ position: "absolute", top: 0, left: 0 }}
               />
-            </animated.div>
+            </div>
           ))}
           <Typography
             variant="caption"
