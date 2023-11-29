@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
-export default function BasicSelect({ label, list }) {
+export default function BasicSelect({ label, list, mt }) {
   const [value, setValue] = React.useState('');
 
   const handleChange = (event) => {
@@ -13,7 +13,7 @@ export default function BasicSelect({ label, list }) {
   };
 
   return (
-    <Box className="mt-6" sx={{ minWidth: 328 }}>
+    <Box className={`${mt} bg-white-500`} sx={{ minWidth: 328 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">{label}</InputLabel>
         <Select
@@ -23,14 +23,12 @@ export default function BasicSelect({ label, list }) {
           label="Value"
           onChange={handleChange}
         >
-          {list && list.map((item) => (
-            <MenuItem
-                  key={item.value}
-                  value={item.value}
-            >
-              {item.name}
-            </MenuItem>
-          ))}
+          {list &&
+            list.map((item) => (
+              <MenuItem key={item.value} value={item.value}>
+                {item.name}
+              </MenuItem>
+            ))}
         </Select>
       </FormControl>
     </Box>

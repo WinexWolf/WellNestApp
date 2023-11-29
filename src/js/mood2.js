@@ -27,7 +27,7 @@ const names = [
             src={DarthVader}
             alt="Darth Vader"
           />
-                  <BasicSelect label={"Select the Avatar to chat with"} list={names} />
+          <BasicSelect mt={"mt-6"}  label={"Select the Avatar to chat with"} list={names} />
         </div>
       </div>
     </>
