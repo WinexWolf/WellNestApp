@@ -37,8 +37,8 @@ const Features = () => {
         features for our users. Please click on the below features to find out
         more!
       </div>
-      <div>
-        <div className="grid grid-cols-2 gap-4 m-16 place-items-center">
+      <div className="flex justify-center">
+        <div className="grid grid-cols-2 gap-4 place-items-center w-1/2">
           {features.map((each) => (
             <ActionAreaCard
               key={each.id}
