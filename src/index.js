@@ -5,11 +5,15 @@ import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 //  React Router
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, redirect, RouterProvider } from "react-router-dom";
 import Root from "./routes/root";
 import ErrorPage from "./routes/error";
 import Layout from "./routes/layout";
 import Features from "./routes/features";
+import PlayStart from "./routes/play/PlayStart";
+import PlayChallenges from "./routes/play/PlayChallenges";
+import BreathingExercise from "./components/play/BreathingExercise";
+
 
 const router = createBrowserRouter([
   {
@@ -23,7 +27,21 @@ const router = createBrowserRouter([
         path: "/features",
         element: <Features />
       },
-
+      {
+        path: "/play",
+        element: <PlayStart/>,
+      },
+      {
+        path: "/play/challenges",
+        element: <PlayChallenges />
+      },
+      {
+        path: "/play/challenges/breathing",
+        element: <BreathingExercise />,
+        // Redirect if local storage indicates that breathing exercise has been completed (prevent from completing it again)
+        loader: () => ((localStorage.getItem('challenges') && JSON.parse(localStorage.getItem('challenges'))[0].isCompleted) ? redirect('/play/challenges') : null)
+      },
+      
       {
         path: "*",
         element: <ErrorPage />
