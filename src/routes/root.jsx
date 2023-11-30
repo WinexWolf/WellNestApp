@@ -21,13 +21,6 @@ const Root = () => {
             {" "}
             Start{" "}
           </Button>
-
-          {/* TODO: remove this! */}
-          <Button variant="contained" href="/play">
-            {" "}
-            Play{" "}
-          </Button>
-
         </div>
       </div>
     </>
