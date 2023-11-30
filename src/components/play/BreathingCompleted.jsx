@@ -12,7 +12,7 @@ const customButtonStyleOpaque = {
     backgroundColor: '#81C8FB',
 };
 
-export default function BreathingCompleted({ }) {
+export default function BreathingCompleted() {
     let challenges = localStorage.getItem('challenges');
     if (!challenges) {
         console.log('Error: no challenges exist!');
@@ -30,7 +30,7 @@ export default function BreathingCompleted({ }) {
             <div className='flex flex-col justify-center items-center'>
                 <img
                     src={'../../images/play/congrats.png'}
-                    alt={`Congratulations Image`}
+                    alt={`Congratulations`}
                     className="w-32 pt-10 pb-10"
                 />
             </div>

@@ -19,7 +19,7 @@ export default function BreathingInProgress({ stage }) {
             <div className='flex flex-col justify-center items-center'>
                 <img
                     src={data[stage].imgSrc}
-                    alt={`${stage} Image`}
+                    alt={`${stage}`}
                     className="w-48 pt-32 pb-32"
                 />
             </div>
