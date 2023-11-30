@@ -12,7 +12,8 @@ const customButtonStyleOpaque = {
     backgroundColor: '#81C8FB',
 };
 
-export default function BreathingCompleted() {
+export default function BreathingCompleted({ coins }) {
+    // Mark challenge 'Breathing Exercise' as completed
     let challenges = localStorage.getItem('challenges');
     if (!challenges) {
         console.log('Error: no challenges exist!');
@@ -23,6 +24,9 @@ export default function BreathingCompleted() {
         // console.log(localStorage.getItem('challenges'))
     }
 
+    // Update coins balance
+    const updatedCoins = coins + 100;
+    localStorage.setItem('coins', updatedCoins.toString());
 
     return (
         <div className='flex flex-col justify-center items-center'>

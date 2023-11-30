@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import BreathingInProgress from './BreathingInPorgress';
 import BreathingCompleted from './BreathingCompleted';
 
-export default function BreathingExercise({ balance }) {
+export default function BreathingExercise() {
     // Breathing stage
     const [stage, setStage] = useState('breathe_in');
 
@@ -31,7 +31,16 @@ export default function BreathingExercise({ balance }) {
             content = <BreathingInProgress stage={stage} />
             break;
         case 'exercise_completed':
-            content = <BreathingCompleted />
+            // Get current coins balance
+            let coins = localStorage.getItem('coins');
+            if (!coins) {
+                coins = 0;
+                localStorage.setItem('coins', coins.toString());
+            } else {
+                coins = parseInt(coins, 10);
+            }
+
+            content = <BreathingCompleted coins={coins} />
             break;
         default:
             content = null;
