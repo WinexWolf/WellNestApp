@@ -5,7 +5,18 @@ module.exports = {
         preflight: false,
     },
     theme: {
-        extend: {},
+        extend: {
+            fontSize: {
+                '40px': '40px',
+                '30px': '30px',
+                '24px': '24px',
+                '16px': '16px',
+                '14px': '14px',
+            },
+            colors: {
+                calmBlue: '#81C8FB',
+            }
+        },
     },
     plugins: [],
 };
