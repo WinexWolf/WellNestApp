@@ -31,7 +31,10 @@ export default function BasicSelect({ label, list, mt, onChange, bgColor, textCo
           id="demo-simple-select"
           value={value}
           label="Value"
-          onChange={handleChange}
+          onChange={(event) => {
+            handleChange(event);
+            onChange(event); // Add this line to trigger the parent's onChange
+          }}
         >
           {list &&
             list.map((item) => (

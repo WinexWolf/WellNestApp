@@ -12,12 +12,18 @@ const Mood8 = () => {
   ]);
   const [newMessage, setNewMessage] = useState("");
 
-  const handleSendMessage = () => {
-    if (newMessage.trim() !== "") {
-      setMessages([...messages, { text: newMessage, isMine: true }]);
-      setNewMessage(selectedValue);
-    }
-  };
+ const handleSendMessage = () => {
+   if (selectedValue.trim() !== "") {
+     // Add the selected value to the messages
+     setMessages([...messages, { text: selectedValue, isMine: true }]);
+     setNewMessage(""); // Clear the input field
+   } else if (newMessage.trim() !== "") {
+     // If the selected value is not present, send the custom message
+     setMessages([...messages, { text: newMessage, isMine: true }]);
+     setNewMessage(""); // Clear the input field
+   }
+ };
+
 
    const names = [
      { value: "Really Happy", name: "Really Happy" },
@@ -78,7 +84,7 @@ const Mood8 = () => {
           textColor={"white"}
           label={"How are you feeling now?"}
           list={names}
-          onChange={handleSelectChange} // Pass the callback function
+          onChange={handleSelectChange}
         />
         <div className="mt-4 flex items-center">
           <input
