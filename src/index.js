@@ -14,6 +14,7 @@ import PlayStart from "./routes/play/PlayStart";
 import PlayChallenges from "./routes/play/PlayChallenges";
 import BreathingExercise from "./components/play/BreathingExercise";
 import Rewards from "./routes/rewards/Rewards";
+import MatchingWelcomePage from "./routes/matching/MatchingWelcomePage";
 
 
 const router = createBrowserRouter([
@@ -41,6 +42,14 @@ const router = createBrowserRouter([
         element: <BreathingExercise />,
         // Redirect if local storage indicates that breathing exercise has been completed (prevent from completing it again)
         loader: () => ((localStorage.getItem('challenges') && JSON.parse(localStorage.getItem('challenges'))[0].isCompleted) ? redirect('/play/challenges') : null)
+      },
+      {
+        path: "/therapy_matching/main",
+        element: <MatchingWelcomePage />
+      },
+      {
+        path: "/therapy_matching/welcome",
+        element: <MatchingWelcomePage />
       },
       {
         path: "/rewards",
