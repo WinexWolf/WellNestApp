@@ -15,6 +15,7 @@ import PlayChallenges from "./routes/play/PlayChallenges";
 import BreathingExercise from "./components/play/BreathingExercise";
 import Rewards from "./routes/rewards/Rewards";
 import MatchingWelcomePage from "./routes/matching/MatchingWelcomePage";
+import MatchingMainPage from "./routes/matching/MatchingMainPage";
 
 
 const router = createBrowserRouter([
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/therapy_matching/main",
-        element: <MatchingWelcomePage />
+        element: <MatchingMainPage />
       },
       {
         path: "/therapy_matching/welcome",

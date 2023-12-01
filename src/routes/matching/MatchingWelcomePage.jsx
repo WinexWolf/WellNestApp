@@ -1,5 +1,4 @@
 import Button from "@mui/material/Button";
-import { Image } from '@mui/material';
 
 const MatchingWelcomePage = () => {
     return (
