@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TitleBar from "./titlebar";
-import DarthVader from "../images/DarthVaderProfile.png";
-import ProfileIcon from "../images/Profile.png";
+import DarthVader from "../../images/DarthVaderProfile.png";
+import ProfileIcon from "../../images/Profile.png";
 import SendIcon from "@mui/icons-material/Send";
 import BasicSelect from "./dropDown";
 

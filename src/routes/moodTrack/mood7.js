@@ -37,7 +37,7 @@ function Mood7() {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <TitleBar showBackButton link={"/mood4"} />
+      <TitleBar showBackButton link={"/moodTrack/mood4"} />
       <div className="w-[339px] h-[369px] bg-sky-300 top-[70px] mt-32 bg-opacity-20 rounded-[20px] flex flex-col items-center ">
         <div className="text-center font-cabin text-neutral-800 mt-4 text-3xl font-normal">
           How Do you Feel Today, My Friend?{" "}
@@ -51,14 +51,14 @@ function Mood7() {
         {openModal && (
           <Modal
             showCancelButton
-                      onOk={handleModal}
-                      onCancel={() => {
-                          setOpenModal(false);
-                          setSelectedValue("");
-                      }}
+            onOk={handleModal}
+            onCancel={() => {
+              setOpenModal(false);
+              setSelectedValue("");
+            }}
             mt={`mt-24`}
-                      modalText={`You want to set/change your today’s mood to ${selectedValue} ?`}
-                      link={'/mood5'}
+            modalText={`You want to set/change your today’s mood to ${selectedValue} ?`}
+            link={"/moodTrack/mood5"}
           ></Modal>
         )}
       </div>

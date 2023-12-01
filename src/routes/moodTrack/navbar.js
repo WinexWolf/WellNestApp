@@ -36,9 +36,9 @@ const BottomNavbar = () => {
     <nav className="fixed bottom-0 w-auto shadow-md ">
       <div className="flex w-auto justify-between px-4 ">
         {renderItem("Therapy", "/")}
-        {renderItem("Mood", "/mood")}
-        {renderItem("Play", "/")}
-        {renderItem("Rewards", "/")}
+        {renderItem("Mood", "/moodTrack/mood0")}
+        {renderItem("Play", "/play")}
+        {renderItem("Rewards", "/rewards")}
       </div>
     </nav>
   );

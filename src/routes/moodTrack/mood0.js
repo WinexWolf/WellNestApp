@@ -1,5 +1,5 @@
 import React from "react";
-import MoodTrack from "../images/moodTrack.png";
+import MoodTrack from "../../images/moodTrack.png";
 import { Link } from "react-router-dom";
 
 function Mood0() {
@@ -27,7 +27,7 @@ function Mood0() {
             textDecoration: "none", // Remove underline
             color: "inherit", // Inherit the color from the parent
           }}
-          to={'/mood1'}
+          to={'/moodTrack/mood1'}
         >
           <div className="text-white text-sm font-medium font-cabin uppercase">
             Continue

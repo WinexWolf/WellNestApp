@@ -1,10 +1,10 @@
 import React from "react";
-import MoodTrack from "../images/moodTrack.png";
+import MoodTrack from "../../images/moodTrack.png";
 import { Link } from "react-router-dom";
 import TitleBar from "./titlebar";
-import DarthVader from '../images/DarthVader.png';
-import Face from "../images/Face4.png";
-import ArrowIcon from "../images/Arrow.png";
+import DarthVader from "../../images/DarthVader.png";
+import Face from "../../images/Face4.png";
+import ArrowIcon from "../../images/Arrow.png";
 
 function Mood1() {
   return (
@@ -33,7 +33,7 @@ function Mood1() {
               textDecoration: "none", // Remove underline
               color: "inherit", // Inherit the color from the parent
             }}
-            to={"/mood2"}
+            to={"/moodTrack/mood2"}
           >
             <div className="text-center text-white text-sm font-medium font-cabin uppercase leading-normal tracking-tight">
               Enter
@@ -73,7 +73,7 @@ function Mood1() {
                   textDecoration: "none", // Remove underline
                   color: "inherit", // Inherit the color from the parent
                 }}
-                to={"/mood3"}
+                to={"/moodTrack/mood3"}
               >
                 <div className="text-center text-white text-sm font-medium font-cabin  uppercase leading-normal tracking-tight">
                   Enter

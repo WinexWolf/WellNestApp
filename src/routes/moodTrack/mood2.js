@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TitleBar from "./titlebar";
-import DarthVader from "../images/DarthVader.png";
-import downArrow from "../images/downArrow.png";
+import DarthVader from "../../images/DarthVader.png";
+import downArrow from "../../images/downArrow.png";
 import BasicSelect from "./dropDown";
 import { Button } from "@mui/material";
 
@@ -25,7 +25,7 @@ function Mood2() {
 
   return (
     <>
-      <TitleBar showBackButton link={"/mood1"} />
+      <TitleBar showBackButton link={"/moodTrack/mood1"} />
       <div className="flex flex-col items-center mt-12 py-20 h-screen bg-white">
         <div className="flex flex-col items-center">
           {/* Image */}
@@ -43,7 +43,7 @@ function Mood2() {
           {selectedValue !== "" && (
             <Button
               variant="contained"
-              href="/mood8"
+              href="/moodTrack/mood8"
               className="mt-24 bg-sky-blue"
               style={{ fontSize: "10px" }}
             >

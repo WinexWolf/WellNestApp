@@ -5,8 +5,8 @@ import {
   Avatar,
   Box
 } from "@mui/material";
-import InstagramIcon from "../images/Instagram.png";
-import WhatsAppIcon from "../images/Whatsapp.png";
+import InstagramIcon from "../../images/Instagram.png";
+import WhatsAppIcon from "../../images/Whatsapp.png";
 import Modal from "./modal";
 
 function Mood5() {
@@ -25,7 +25,7 @@ function Mood5() {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <TitleBar showBackButton link={"/mood4"} />
+      <TitleBar showBackButton link={"/moodTrack/mood4"} />
       <div className="w-[339px] h-[369px] bg-sky-300 top-[70px] mt-32 bg-opacity-20 rounded-[20px] flex flex-col items-center ">
         <div className="text-center font-cabin text-neutral-800 mt-4 text-3xl font-normal">
           Share Mood Data
@@ -38,7 +38,7 @@ function Mood5() {
         </div>
         <div
           className="w-[300px] h-[56px] bg-white-500 rounded-[10px] mt-3 flex items-center px-2 gap-3"
-                  onClick={() => {
+          onClick={() => {
             setApp("Instagram");
             handleModal();
           }}

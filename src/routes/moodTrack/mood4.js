@@ -47,7 +47,7 @@ function Mood4() {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <TitleBar showBackButton link={"/mood2"} />
+      <TitleBar showBackButton link={"/moodTrack/mood2"} />
       <div className="w-[328px] h-[492px] bg-sky-300 top-[7px] mt-12 bg-opacity-20 rounded-[20px] flex flex-col items-center ">
         <div className="text-center font-cabin text-neutral-800 mt-4 text-3xl font-normal">
           Historical Mood Graph
@@ -58,7 +58,7 @@ function Mood4() {
         <div className="flex justify-end items-end w-full mr-6 mt-10">
           <Button
             variant="contained"
-            href="/mood5"
+            href="/moodTrack/mood5"
             style={{ fontSize: "10px", backgroundColor: "#0087E8" }}
             endIcon={
               <IconButton color="inherit">
