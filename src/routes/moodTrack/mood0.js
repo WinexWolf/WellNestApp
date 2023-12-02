@@ -1,6 +1,7 @@
 import React from "react";
 import MoodTrack from "../../images/moodTrack.png";
 import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
 function Mood0() {
   return (
@@ -21,7 +22,7 @@ function Mood0() {
         the Mood Tracker
       </div>
 
-      <div className="bg-sky-600 rounded shadow px-4 py-2">
+      {/*  <div className="bg-sky-600 rounded shadow px-4 py-2">
         <Link
           style={{
             textDecoration: "none", // Remove underline
@@ -33,7 +34,13 @@ function Mood0() {
             Continue
           </div>
         </Link>
-      </div>
+      </div> */}
+      <Button
+        variant="contained"
+        href="/moodTrack/mood1"
+        style={{  backgroundColor: "#0087E8" }}
+      >
+Continue      </Button>
     </div>
   );
 }

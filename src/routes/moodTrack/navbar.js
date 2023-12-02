@@ -1,10 +1,25 @@
-// BottomNavbar.js
-
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const BottomNavbar = () => {
+  const location = useLocation();
   const [activeItem, setActiveItem] = useState(null);
+
+  useEffect(() => {
+    // Set the active tab based on the current URL
+    const pathname = location.pathname;
+    if (pathname === "/") {
+      setActiveItem("Therapy");
+    } else if (pathname.startsWith("/moodTrack")) {
+      setActiveItem("Mood");
+    } else if (pathname.startsWith("/play")) {
+      setActiveItem("Play");
+    } else if (pathname.startsWith("/rewards")) {
+      setActiveItem("Rewards");
+    } else {
+      setActiveItem(null);
+    }
+  }, [location]);
 
   const handleItemClick = (item) => {
     setActiveItem(item);
@@ -33,8 +48,8 @@ const BottomNavbar = () => {
   );
 
   return (
-    <nav className="fixed bottom-0 w-auto shadow-md ">
-      <div className="flex w-auto justify-between px-4 ">
+    <nav className="fixed bottom-0 w-auto shadow-md">
+      <div className="flex w-auto justify-between px-4">
         {renderItem("Therapy", "/")}
         {renderItem("Mood", "/moodTrack/mood0")}
         {renderItem("Play", "/play")}

@@ -5,6 +5,7 @@ import TitleBar from "./titlebar";
 import DarthVader from "../../images/DarthVader.png";
 import Face from "../../images/Face4.png";
 import ArrowIcon from "../../images/Arrow.png";
+import { Button } from "@mui/material";
 
 function Mood1() {
   return (
@@ -27,20 +28,13 @@ function Mood1() {
         src={DarthVader}
       />
       <div className="left-[99px] top-[358px] absolute justify-start items-start inline-flex">
-        <div className="w-[153px] h-9 px-4 py-1.5 bg-sky-600 rounded justify-center items-center gap-2 flex">
-          <Link
-            style={{
-              textDecoration: "none", // Remove underline
-              color: "inherit", // Inherit the color from the parent
-            }}
-            to={"/moodTrack/mood2"}
-          >
-            <div className="text-center text-white text-sm font-medium font-cabin uppercase leading-normal tracking-tight">
-              Enter
-            </div>
-          </Link>
-          <img className="w-4 h-4 ml-2" src={ArrowIcon} alt="Arrow Icon" />
-        </div>
+        <Button
+          variant="contained"
+          className="justify-center w-36"
+          href="/moodTrack/mood2"
+        >
+          ENTER
+        </Button>
       </div>
       <div className="w-6 h-6 pl-1 pr-[3.50px] pt-[4.95px] pb-[5.50px] left-[226px] top-[334px] absolute justify-center items-center inline-flex">
         <div className="origin-top-left -rotate-90 w-[13.55px] h-[16.50px] relative"></div>
@@ -67,19 +61,13 @@ function Mood1() {
             </div>
           </div>
           <div className="w-[157px] h-9 left-[101px] top-[151px] absolute justify-start items-start inline-flex">
-            <div className="w-[157px] h-9 px-4 py-1.5 bg-sky-600 rounded justify-center items-center gap-2 flex">
-              <Link
-                style={{
-                  textDecoration: "none", // Remove underline
-                  color: "inherit", // Inherit the color from the parent
-                }}
-                to={"/moodTrack/mood3"}
-              >
-                <div className="text-center text-white text-sm font-medium font-cabin  uppercase leading-normal tracking-tight">
-                  Enter
-                </div>
-              </Link>
-            </div>
+            <Button
+              variant="contained"
+              className="justify-center w-36"
+              href="/moodTrack/mood3"
+            >
+              ENTER
+            </Button>
           </div>
         </div>
       </div>
