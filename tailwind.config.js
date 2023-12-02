@@ -15,7 +15,7 @@ module.exports = {
         "white-500":"#ffffff",// Add your actual color value here
       },
       textColor: {
-        white: "#ffffff", // Add your actual color value here
+        "white": "#ffffff", // Add your actual color value here
         green: "#24C72B", // Add your actual color value here
       },
       fontSize: {

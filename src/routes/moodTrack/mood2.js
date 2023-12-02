@@ -18,9 +18,9 @@ function Mood2() {
   };
 
   const names = [
-    { value: 10, name: "Darth Vader" },
-    { value: 20, name: "Tom Hanks" },
-    { value: 30, name: "Beyonce" },
+    { value: 10, name: "Darth Vader", disabled: false },
+    { value: 20, name: "Tom Hanks", disabled: true },
+    { value: 30, name: "Beyonce", disabled: true },
   ];
 
   return (
@@ -45,7 +45,7 @@ function Mood2() {
               variant="contained"
               href="/moodTrack/mood8"
               className="mt-2 bg-sky-blue"
-              style={{marginTop:"120px", fontSize: "10px" }}
+              style={{marginTop:"120px"}}
             >
               Continue
             </Button>

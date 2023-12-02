@@ -42,7 +42,7 @@ const Mood8 = () => {
 
   return (
     <>
-      <TitleBar />
+      <TitleBar showBackButton link={"/moodTrack/mood2"}/>
       <div className="w-600 p-5">
         <div className="h-[60vh] overflow-y-scroll rounded-8 p-2">
           {messages.map((message, index) => (
@@ -81,7 +81,7 @@ const Mood8 = () => {
         <BasicSelect 
           mt={"mt-5"}
           bgColor={"blue"}
-          textColor={"white"}
+          txtColor={"white"}
           label={"How are you feeling now?"}
           list={names}
           onChange={handleSelectChange}
