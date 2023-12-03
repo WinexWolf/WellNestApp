@@ -37,7 +37,7 @@ function Mood7() {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <TitleBar showBackButton link={"/moodTrack/mood4"} />
+      <TitleBar showBackButton link={"/moodTrack/mood3"} />
       <div className="w-[339px] h-[369px] bg-sky-300 top-[70px] mt-32 bg-opacity-20 rounded-[20px] flex flex-col items-center ">
         <div className="text-center font-cabin text-neutral-800 mt-4 text-3xl font-normal">
           How Do you Feel Today, My Friend?{" "}
@@ -47,6 +47,7 @@ function Mood7() {
           label={!openModal ? "Select the Mood to Update to here" : ""}
           list={names}
           onChange={handleSelectChange} // Pass the callback function
+          bgColor={"white"}
         />
         {openModal && (
           <Modal
