@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from '@mui/material/Card';
 import { makeStyles } from '@mui/styles';
 import Button from "@mui/material/Button";
+import LoadingCard from './LoadingCard';
 
 // Define custom styles
 const useStyles = makeStyles({
@@ -31,10 +32,9 @@ const useStyles = makeStyles({
 const SwipeableContainer = ({ children }) => {
     const classes = useStyles();
     const [activeCardIndex, setActiveCardIndex] = useState(0);
-    const [visibleCards, setVisibleCards] = useState([true, true, true]);
+    const [visibleCards, setVisibleCards] = useState([true, true, true, true, true]);
 
     const handleSwipe = (idx) => {
-        console.log("here" + idx);
         setVisibleCards(prevState => {
             for (let i = 0; i < prevState.length; i++) {
                 if (i === idx || i === activeCardIndex) {
@@ -51,7 +51,7 @@ const SwipeableContainer = ({ children }) => {
     return (
         <div 
             className="flex flex-col justify-around items-center" 
-            style={{flexGrow: 1, width: '100%', paddingTop: '50px'}}
+            style={{flexGrow: 1, width: '100%'}}
         >
             <div className={classes.cardContainer}>
                 {React.Children.map(children, (child, index) => {
@@ -63,11 +63,17 @@ const SwipeableContainer = ({ children }) => {
                     } else {
                         transformValue = `translateX(100%)`;
                     }
+                    let clonedChild;
 
                     // Clone the child and wrap it inside the Card component
-                    const clonedChild = React.cloneElement(child, { 
-                        handleSwipe
-                    });
+                    if (child.type === LoadingCard) {
+                        clonedChild = <LoadingCard handleSwipe={handleSwipe} active={index === activeCardIndex}/>;
+                    } else {
+                        clonedChild = React.cloneElement(child, { handleSwipe });
+                    }
+                    // const clonedChild = React.cloneElement(child, { 
+                    //     handleSwipe
+                    // });
 
                     return (
                         <Card
@@ -93,6 +99,12 @@ const SwipeableContainer = ({ children }) => {
                 </Button>
                 <Button variant="contained" onClick={() => handleSwipe(2)}>
                     to3
+                </Button>
+                <Button variant="contained" onClick={() => handleSwipe(3)}>
+                    to4
+                </Button>
+                <Button variant="contained" onClick={() => handleSwipe(4)}>
+                    to5
                 </Button>
             </div>
         </div>

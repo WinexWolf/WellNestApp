@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SwipeableContainer from '../../components/therapymatching/SwipableContainer'; // Adjust the path as per your file structure
 import { makeStyles } from '@mui/styles';
 import FindTherapyCard from '../../components/therapymatching/FindTherapyCard';
+import GoogleConfirmCard from '../../components/therapymatching/GoogleConfirmCard';
+import LoadingCard from '../../components/therapymatching/LoadingCard';
 
 const useStyles = makeStyles({
     flexContainer: {
@@ -34,6 +36,22 @@ const useStyles = makeStyles({
 
 const MatchingMainPage = () => {
     const classes = useStyles();
+    const getLocal = (balanceType) => {
+        let balance = localStorage.getItem(balanceType);
+        if (!balance) {
+            balance = 0;
+            setLocal('sessions_balance', balance)
+        } else {
+            balance = parseInt(balance, 10);
+        }
+        return balance;
+    }
+    
+      // Set coins/sessions balance
+    const setLocal = (balanceType, balance) => localStorage.setItem(balanceType, balance.toString());
+
+    const [balance, setBalance] = useState(getLocal('sessions_balance'));
+
     return (
         <div className={classes.flexContainer}>
             <div 
@@ -50,18 +68,21 @@ const MatchingMainPage = () => {
                     Current Balance:
                 </div>
                 <div className={classes.secondLine}>
-                    5 sessions remained
+                    {balance} sessions remained
                 </div>
 
             </div>
             <SwipeableContainer>
                 <FindTherapyCard/>
-                <div style={{ backgroundColor: 'lightgreen', height: '100%'}}>
-                    Card 2
+                <GoogleConfirmCard/>
+                <LoadingCard/>
+                <div style={{height: '100%', width: '100%', backgroundColor: 'lightblue'}}>
+                    card4
                 </div>
-                <div style={{ backgroundColor: 'lightcoral', height: '100%'}}>
-                    Card 3
+                <div style={{height: '100%', width: '100%', backgroundColor: 'orange'}}>
+                    card5
                 </div>
+
             {/* Add more cards as needed */}
             </SwipeableContainer>
         

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import Card from '@mui/material/Card';
+import React from 'react';
 import { makeStyles } from '@mui/styles';
 import Button from "@mui/material/Button";
 
@@ -8,7 +7,8 @@ const useStyles = makeStyles({
     background: {
         backgroundColor: 'rgba(129, 200, 251, 0.15)',
         borderRadius: '20px',
-        height: '100%',
+        marginTop: '40px',
+        height: '90%',
     },
 
     flexContainer:{
