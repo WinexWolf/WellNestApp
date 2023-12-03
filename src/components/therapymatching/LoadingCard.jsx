@@ -42,11 +42,11 @@ const LoadingCard = ({ handleSwipe, active}) => {
     const classes = useStyles();
     useEffect(() => {
         let timer;
-        // if (active) {
-        //     timer = setTimeout(() => {
-        //         handleSwipe(3); // Go to next card after 2 seconds
-        //     }, 1500);
-        // }
+        if (active) {
+            timer = setTimeout(() => {
+                handleSwipe(3); // Go to next card after 2 seconds
+            }, 1500);
+        }
         return () => clearTimeout(timer); // Clean up the timer
     }, [active, handleSwipe]);
     return (
