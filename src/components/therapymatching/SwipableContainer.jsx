@@ -6,11 +6,10 @@ import Button from "@mui/material/Button";
 // Define custom styles
 const useStyles = makeStyles({
     cardContainer: {
-        width: '60%',
-        height: '80%',
+        width: '90%',
+        flexGrow: 1,
         position: 'relative',
-        overflow: 'hidden',
-        marginBottom: '20px',
+        overflow: 'hidden'
       },
     card: {
         '&&': {
@@ -35,6 +34,7 @@ const SwipeableContainer = ({ children }) => {
     const [visibleCards, setVisibleCards] = useState([true, true, true]);
 
     const handleSwipe = (idx) => {
+        console.log("here" + idx);
         setVisibleCards(prevState => {
             for (let i = 0; i < prevState.length; i++) {
                 if (i === idx || i === activeCardIndex) {
@@ -51,7 +51,7 @@ const SwipeableContainer = ({ children }) => {
     return (
         <div 
             className="flex flex-col justify-around items-center" 
-            style={{height: '100%'}}
+            style={{flexGrow: 1, width: '100%', paddingTop: '50px'}}
         >
             <div className={classes.cardContainer}>
                 {React.Children.map(children, (child, index) => {
@@ -64,6 +64,11 @@ const SwipeableContainer = ({ children }) => {
                         transformValue = `translateX(100%)`;
                     }
 
+                    // Clone the child and wrap it inside the Card component
+                    const clonedChild = React.cloneElement(child, { 
+                        handleSwipe
+                    });
+
                     return (
                         <Card
                             className={classes.card}
@@ -73,7 +78,7 @@ const SwipeableContainer = ({ children }) => {
                                 visibility: visibleCards[index] ? 'visible' : 'hidden',
                             }}
                         >
-                            {child}
+                            {clonedChild}
                         </Card>
                     );
                 })}
