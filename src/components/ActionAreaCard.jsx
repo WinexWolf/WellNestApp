@@ -4,11 +4,18 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
 
-const ActionAreaCard = ({ imageLink, featureName, description, ...props }) => {
+const ActionAreaCard = ({
+  imageLink,
+  featureName,
+  description,
+  redirectLink = "/",
+  ...props
+}) => {
   return (
     <Card sx={{ width: 250 }}>
-      <CardActionArea>
+      <CardActionArea component={RouterLink} to={redirectLink}>
         <CardMedia
           component="img"
           image={`${imageLink}`}

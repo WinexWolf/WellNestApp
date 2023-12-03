@@ -5,25 +5,29 @@ const features = [
     id: "tm",
     imageLink: "images/tm.svg",
     featureName: "Therapy Matching",
-    description: ""
+    description: "",
+    redirectLink: "/features"
   },
   {
     id: "dj",
     imageLink: "images/journaling.svg",
     featureName: "Daily Journal",
-    description: ""
+    description: "",
+    redirectLink: "/features"
   },
   {
     id: "mt",
     imageLink: "images/mt.svg",
     featureName: "Mood Tracking",
-    description: ""
+    description: "",
+    redirectLink: "/features"
   },
   {
     id: "pte",
     imageLink: "images/tm.svg",
     featureName: "Play to Earn",
-    description: ""
+    description: "",
+    redirectLink: "/play"
   }
 ];
 
@@ -45,6 +49,7 @@ const Features = () => {
               imageLink={each.imageLink}
               featureName={each.featureName}
               description={each.description}
+              redirectLink={each.redirectLink}
             />
           ))}
         </div>
