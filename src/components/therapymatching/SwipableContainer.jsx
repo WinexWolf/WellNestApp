@@ -3,6 +3,7 @@ import Card from '@mui/material/Card';
 import { makeStyles } from '@mui/styles';
 import Button from "@mui/material/Button";
 import LoadingCard from './LoadingCard';
+import TherapyConfirmCard from './TherapyConfirmCard';
 
 // Define custom styles
 const useStyles = makeStyles({
@@ -66,8 +67,15 @@ const SwipeableContainer = ({ children }) => {
                     let clonedChild;
 
                     // Clone the child and wrap it inside the Card component
-                    if (child.type === LoadingCard) {
-                        clonedChild = <LoadingCard handleSwipe={handleSwipe} active={index === activeCardIndex}/>;
+                    if (
+                        child.type === LoadingCard ||
+                        child.type === TherapyConfirmCard
+                    ) {
+                        // clonedChild = <LoadingCard handleSwipe={handleSwipe} active={index === activeCardIndex}/>;
+                        clonedChild = React.cloneElement(child, { 
+                            handleSwipe,
+                            active: index === activeCardIndex
+                        });
                     } else {
                         clonedChild = React.cloneElement(child, { handleSwipe });
                     }
@@ -90,7 +98,7 @@ const SwipeableContainer = ({ children }) => {
                 })}
             </div>
 
-            <div className={classes.buttonContainer}>
+            {/* <div className={classes.buttonContainer}>
                 <Button variant="contained" onClick={() => handleSwipe(0)}>
                     to1
                 </Button>
@@ -106,7 +114,7 @@ const SwipeableContainer = ({ children }) => {
                 <Button variant="contained" onClick={() => handleSwipe(4)}>
                     to5
                 </Button>
-            </div>
+            </div> */}
         </div>
     );
 };

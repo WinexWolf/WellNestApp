@@ -47,7 +47,9 @@ const LoadingCard = ({ handleSwipe, active}) => {
                 handleSwipe(3); // Go to next card after 2 seconds
             }, 1500);
         }
-        return () => clearTimeout(timer); // Clean up the timer
+        return () => {
+            clearTimeout(timer)
+        }; // Clean up the timer
     }, [active, handleSwipe]);
     return (
         <div className = {classes.flexContainer}>

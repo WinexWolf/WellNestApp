@@ -4,12 +4,13 @@ import { makeStyles } from '@mui/styles';
 import FindTherapyCard from '../../components/therapymatching/FindTherapyCard';
 import GoogleConfirmCard from '../../components/therapymatching/GoogleConfirmCard';
 import LoadingCard from '../../components/therapymatching/LoadingCard';
+import TherapyConfirmCard from '../../components/therapymatching/TherapyConfirmCard';
 
 const useStyles = makeStyles({
     flexContainer: {
         display: 'flex',
         flexDirection: 'column',
-        height: '90%',
+        height: '95%',
         width: '100%',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -40,7 +41,7 @@ const MatchingMainPage = () => {
         let balance = localStorage.getItem(balanceType);
         if (!balance) {
             balance = 0;
-            setLocal('sessions_balance', balance)
+            setLocal(balanceType, balance)
         } else {
             balance = parseInt(balance, 10);
         }
@@ -76,9 +77,7 @@ const MatchingMainPage = () => {
                 <FindTherapyCard/>
                 <GoogleConfirmCard/>
                 <LoadingCard/>
-                <div style={{height: '100%', width: '100%', backgroundColor: 'lightblue'}}>
-                    card4
-                </div>
+                <TherapyConfirmCard setBalance = {setBalance}/>
                 <div style={{height: '100%', width: '100%', backgroundColor: 'orange'}}>
                     card5
                 </div>

@@ -2,16 +2,18 @@
 const TherapistInfoModels = [
 
     {
-        "name": "Kevin Heart",
+        "Name": "Kevin Heart",
         "Qualifications": "Clinical Psychologist Associate & Corporate Trainer",
         "Date": "18th November, 2023",
-        "Time": "5:00 PM PST (30 Minutes Session)"
+        "Time": "5:00 PM PST",
+        "Src": "/images/tm/Kevin.png"
     },
     {
-        "name": "Gertrude J Speciale",
+        "Name": "Gertrude J Speciale",
         "Qualifications": "Clinical Psychologist Associate & Corporate Trainer",
         "Date": "18th November, 2023",
-        "Time": "6:00 PM PST (30 Minutes Session)"
+        "Time": "6:00 PM PST",
+        "Src": "/images/tm/Gertrude.png"
     }
 
 
