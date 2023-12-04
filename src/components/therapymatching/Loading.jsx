@@ -1,6 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@mui/styles';
-
+//import { makeStyles } from '@mui/styles';
+import { makeStyles } from "mui-styles";
 
 // Define custom styles
 const useStyles = makeStyles({
