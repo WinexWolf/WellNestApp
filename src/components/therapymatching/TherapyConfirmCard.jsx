@@ -247,7 +247,12 @@ const TherapyConfirmCard = ({ handleSwipe, active, setBalance }) => {
                             width: '100px',
                             marginRight: '20px'
                         }}
-                        onClick={() => handleSwipe(2)}
+                        onClick={() => {
+                            var matchedTherapist = getLocal('next_therapist');
+                            var nextTherapist = (matchedTherapist + 1) % TherapistInfoModels.length;
+                            setLocal('next_therapist', nextTherapist);
+                            handleSwipe(2);
+                        }}
                     >
                         Rematch
                     </Button>
