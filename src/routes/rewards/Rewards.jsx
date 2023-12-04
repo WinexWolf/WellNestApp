@@ -32,8 +32,8 @@ const Rewards = () => {
 
     return (
         <div>
-            <div className="flex flex-col justify-center items-center mt-20 mb-14">
-                <Card sx={{ borderRadius: 5 }} className='w-80'>
+            <div className="flex flex-col justify-center items-center mt-14 mb-14">
+                <Card sx={{ borderRadius: 5 }} className='w-11/12'>
                     <CardContent className="bg-calmBlue bg-opacity-20">
                         <div className="text-30px font-semibold text-center pb-2">
                             Current Coins
@@ -46,7 +46,7 @@ const Rewards = () => {
             </div>
 
             <div className="flex flex-col justify-center items-center">
-                <Card sx={{ borderRadius: 5 }} className='w-80'>
+                <Card sx={{ borderRadius: 5 }} className='w-11/12'>
                     <CardContent className="bg-calmBlue bg-opacity-20">
                         <div className="text-30px font-semibold text-center pt-4 pb-4">
                             Redeem Coins

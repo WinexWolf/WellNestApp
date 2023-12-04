@@ -49,12 +49,12 @@ const PlayChallenges = () => {
         <div>
             <div className="flex flex-col justify-between items-center">
                 <div>
-                    <div className="font-semibold text-40px text-center pt-10 pb-2">
+                    <div className="font-semibold text-40px text-center pt-4">
                         Play to Earn Coins!
                     </div>
                 </div>
                 <div>
-                    <div className="text-16px pb-8 text-center">
+                    <div className="text-16px pb-2 text-center">
                         Use your coins to redeem free therapy session from “Rewards”!
                     </div>
                 </div>
