@@ -29,7 +29,9 @@ In the project directory, you can run:
 
 npm install is a command used in Node.js development to install dependencies for a project. When you run `npm install`, it looks for a package.json file in the current directory and fetches the packages listed in package.json from the npm registry and installs them in a node_modules directory within your project. 
 
-Note: if you are experiencing an npm error complaining about pairing @mui/styles@5.14.19 with react@18.2.0, please safely ignore it by running `npm install --force` instead.
+~~Note: if you are experiencing an npm error complaining about pairing @mui/styles@5.14.19 with react@18.2.0, please safely ignore it by running `npm install --force` instead.~~
+
+(The above problem is fixed by using a package [mui-styles](https://www.npmjs.com/package/mui-styles) to that make mui styles compatible to react 18.X)
 
 ### `npm run start`
 
