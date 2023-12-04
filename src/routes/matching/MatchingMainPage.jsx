@@ -64,6 +64,7 @@ const MatchingMainPage = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
+                    marginTop: '20px',
                 }}
             >
                 <div className={classes.firstLine}>

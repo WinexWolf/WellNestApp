@@ -74,13 +74,11 @@ const TherapyConfirmCard = ({ handleSwipe, active, setBalance }) => {
     const setLocal = (balanceType, balance) => localStorage.setItem(balanceType, balance.toString());
 
     const getNextTherapist = () => {
-        setLocal('therapist_is_matched', 1);
+        
         var matchedTherapist = getLocal('next_therapist');
         if (!matchedTherapist) {
             matchedTherapist = 0;
         }
-        var nextTherapist = (matchedTherapist + 1) % TherapistInfoModels.length;
-        setLocal('next_therapist', nextTherapist);
         return TherapistInfoModels[matchedTherapist];
     };
     const classes = useStyles();
@@ -90,6 +88,10 @@ const TherapyConfirmCard = ({ handleSwipe, active, setBalance }) => {
     const [open, setOpen] = React.useState(false);
     const handleConfirm = () => {
         setOpen(false);
+        setLocal('therapist_is_matched', 1);
+        var matchedTherapist = getLocal('next_therapist');
+        var nextTherapist = (matchedTherapist + 1) % TherapistInfoModels.length;
+        setLocal('next_therapist', nextTherapist);
         setLocal('sessions_balance', getLocal('sessions_balance') - 1)
         setBalance(getLocal('sessions_balance'));
         handleSwipe(4);
