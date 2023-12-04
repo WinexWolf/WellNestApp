@@ -26,30 +26,33 @@ const BottomNavbar = () => {
   };
 
   const renderItem = (item, path) => (
-    <div
+    <Link
       key={item}
       onClick={() => handleItemClick(item)}
+      
       className={`cursor-pointer p-4 font-cabin w-full transition-all ${
-        activeItem === item
-          ? "bg-blue-500 text-white"
-          : "bg-white hover:bg-gray-200 text-black"
-      }`}
+          activeItem === item
+            ? "bg-blue-500 text-white"
+            : "bg-white hover:bg-gray-200 text-black"
+        }`
+      }
+
+      style={{
+        boxShadow: "0px -5px 10px rgba(0, 0, 0, 0.25)",
+        textAlign: "center",
+        textDecoration: "none", // Remove underline
+        color: "inherit", // Inherit the color from the parent
+      }}
+      to={path}
+
     >
-      <Link
-        style={{
-          textDecoration: "none", // Remove underline
-          color: "inherit", // Inherit the color from the parent
-        }}
-        to={path}
-      >
-        {item}
-      </Link>
-    </div>
+      {item}
+    </Link>
   );
 
   return (
     <nav className="fixed bottom-0 w-auto shadow-md w-full z-50">
-      <div className="flex w-auto justify-between px-4">
+      <div className="flex w-auto justify-between">
         {renderItem("Therapy", "/therapy_matching/welcome")}
         {renderItem("Mood", "/moodTrack/mood0")}
         {renderItem("Play", "/play")}
