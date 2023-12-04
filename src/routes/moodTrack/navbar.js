@@ -50,7 +50,7 @@ const BottomNavbar = () => {
   return (
     <nav className="fixed bottom-0 w-auto shadow-md">
       <div className="flex w-auto justify-between px-4">
-        {renderItem("Therapy", "/")}
+        {renderItem("Therapy", "/therapy_matching/welcome")}
         {renderItem("Mood", "/moodTrack/mood0")}
         {renderItem("Play", "/play")}
         {renderItem("Rewards", "/rewards")}

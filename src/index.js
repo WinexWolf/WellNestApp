@@ -18,6 +18,8 @@ import PlayStart from "./routes/play/PlayStart";
 import PlayChallenges from "./routes/play/PlayChallenges";
 import BreathingExercise from "./components/play/BreathingExercise";
 import Rewards from "./routes/rewards/Rewards";
+import MatchingWelcomePage from "./routes/matching/MatchingWelcomePage";
+import MatchingMainPage from "./routes/matching/MatchingMainPage";
 import BottomNavbar from "./routes/moodTrack/navbar";
 import Mood0 from "./routes/moodTrack/mood0";
 import Mood1 from "./routes/moodTrack/mood1";
@@ -59,6 +61,14 @@ const router = createBrowserRouter([
           JSON.parse(localStorage.getItem("challenges"))[0].isCompleted
             ? redirect("/play/challenges")
             : null,
+      },
+      {
+        path: "/therapy_matching/main",
+        element: <MatchingMainPage />
+      },
+      {
+        path: "/therapy_matching/welcome",
+        element: <MatchingWelcomePage />
       },
       {
         path: "/rewards",
