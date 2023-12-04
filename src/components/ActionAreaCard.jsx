@@ -11,23 +11,51 @@ const ActionAreaCard = ({
   featureName,
   description,
   redirectLink = "/",
+  isDisabled,
   ...props
 }) => {
   return (
-    <Card sx={{ width: 250 }}>
-      <CardActionArea component={RouterLink} to={redirectLink}>
+    <Card className="w-32 lg:w-64" sx={{ borderRadius: 5 }}>
+      <CardActionArea
+        component={RouterLink}
+        to={redirectLink}
+        disabled={isDisabled}
+      >
         <CardMedia
           component="img"
           image={`${imageLink}`}
           alt={`${featureName}`}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div" align="center">
-            {featureName}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {description}
-          </Typography>
+          {isDisabled ? (
+            <div className="text-24px font-semibold text-center text-zinc-500">
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                align="center"
+              >
+                {featureName}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {description}
+              </Typography>
+            </div>
+          ) : (
+            <div className="text-24px font-semibold text-center">
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                align="center"
+              >
+                {featureName}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {description}
+              </Typography>
+            </div>
+          )}
         </CardContent>
       </CardActionArea>
     </Card>
