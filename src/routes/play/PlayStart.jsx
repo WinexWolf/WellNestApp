@@ -7,7 +7,7 @@ const PlayStart = () => {
                 <img
                     src={'images/play/play_to_earn_start.png'}
                     alt={'Play To Earn Start'}
-                    className="pt-24 pb-24"
+                    className="max-w-full w-[275px] h-[300px] pt-24 pb-12"
                 />
             </div>
             <div>
@@ -21,7 +21,7 @@ const PlayStart = () => {
                 </div>
             </div>
             <div>
-                <Button variant="contained" href="/play/challenges">CONTINUE</Button>
+                <Button variant="contained" style={{ backgroundColor: "#0087E8" }} href="/play/challenges">CONTINUE</Button>
             </div>
         </div >
     );

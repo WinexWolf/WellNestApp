@@ -18,7 +18,7 @@ const Modal = ({ modalText, showCancelButton, onCancel, onOk, mt, link }) => {
               className="w-9 px-2 py-1.5 rounded justify-center items-center gap-2 flex cursor-pointer"
               onClick={onCancel}
             >
-              <div className="text-center text-red-500 text-sm font-medium font-['Cabin'] uppercase leading-normal tracking-tight">
+              <div className="text-center text-red-500 text-sm font-medium uppercase leading-normal tracking-tight">
                 Cancel
               </div>
             </div>
@@ -34,7 +34,7 @@ const Modal = ({ modalText, showCancelButton, onCancel, onOk, mt, link }) => {
               className="w-9 px-2 py-1.5 rounded justify-center items-center gap-2 flex cursor-pointer ml-auto"
               onClick={onOk}
             >
-              <div className="text-center text-sky-600 text-sm font-medium font-['Cabin'] uppercase leading-normal tracking-tight">
+              <div className="text-center text-sky-600 text-sm font-medium uppercase leading-normal tracking-tight">
                 OK
               </div>
             </div>

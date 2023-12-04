@@ -70,7 +70,11 @@ export default function RewardCard({ item, price, setCoins }) {
           </div>
         </div>
 
-        <Button variant="contained" className="justify-center w-36" onClick={handleModalOpen}>
+        <Button
+          variant="contained"
+          className="justify-center w-36"
+          style={{ backgroundColor: "#0087E8" }}
+          onClick={handleModalOpen}>
           REDEEM
         </Button>
         <Modal

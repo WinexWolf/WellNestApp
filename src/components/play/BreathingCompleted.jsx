@@ -4,12 +4,13 @@ import Button from '@mui/material/Button';
 const customButtonStyle = {
     fontSize: '14px',
     padding: '6px',
+    backgroundColor: "#0087E8",
 };
 
 const customButtonStyleOpaque = {
     fontSize: '14px',
     padding: '6px',
-    backgroundColor: '#81C8FB',
+    backgroundColor: "#0087E8",
 };
 
 export default function BreathingCompleted({ coins }) {

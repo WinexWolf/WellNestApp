@@ -20,7 +20,10 @@ const Root = () => {
         </div>
         {/* Start button */}
         <div className="min-w-full">
-          <Button variant="contained" href="/features">
+          <Button
+            variant="contained"
+            href="/features"
+            style={{ backgroundColor: "#0087E8" }}>
             {" "}
             Start{" "}
           </Button>

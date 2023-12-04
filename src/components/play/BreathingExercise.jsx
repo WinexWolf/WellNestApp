@@ -47,8 +47,8 @@ export default function BreathingExercise() {
     }
 
     return (
-        <div className="flex flex-col justify-center items-center mt-20">
-            <Card sx={{ borderRadius: 5 }}>
+        <div className="flex flex-col justify-center items-center mt-10">
+            <Card sx={{ borderRadius: 5 }} className='w-11/12'>
                 <CardContent className="bg-calmBlue bg-opacity-20">
                     <div className="text-30px font-semibold text-center p-5">
                         Breathing Exercise

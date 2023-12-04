@@ -32,6 +32,7 @@ function Mood1() {
           variant="contained"
           className="justify-center w-36"
           href="/moodTrack/mood2"
+          style={{  backgroundColor: "#0087E8" }}
         >
           ENTER
         </Button>
@@ -65,6 +66,7 @@ function Mood1() {
               variant="contained"
               className="justify-center w-36"
               href="/moodTrack/mood3"
+              style={{  backgroundColor: "#0087E8" }}
             >
               ENTER
             </Button>

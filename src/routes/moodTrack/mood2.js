@@ -45,7 +45,7 @@ function Mood2() {
               variant="contained"
               href="/moodTrack/mood8"
               className="mt-2 bg-sky-blue"
-              style={{marginTop:"120px"}}
+              style={{ marginTop:"120px", backgroundColor: "#0087E8" }}
             >
               Continue
             </Button>
