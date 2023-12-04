@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SwipeableContainer from '../../components/therapymatching/SwipableContainer'; // Adjust the path as per your file structure
 // import { makeStyles } from '@mui/styles';
 import { makeStyles } from "mui-styles";
@@ -16,7 +16,7 @@ const useStyles = makeStyles({
         width: '100%',
         alignItems: 'center',
         justifyContent: 'space-between',
-        
+
     },
     roundCornerBackGround: {
         backgroundColor: 'rgba(129, 200, 251, 0.15)',
@@ -34,7 +34,7 @@ const useStyles = makeStyles({
         fontSize: '16px',
         fontWeight: 'bold'
     }
-    
+
 });
 
 const MatchingMainPage = () => {
@@ -49,18 +49,18 @@ const MatchingMainPage = () => {
         }
         return balance;
     }
-    
-      // Set coins/sessions balance
+
+    // Set coins/sessions balance
     const setLocal = (balanceType, balance) => localStorage.setItem(balanceType, balance.toString());
 
     const [balance, setBalance] = useState(getLocal('sessions_balance'));
 
     return (
         <div className={classes.flexContainer}>
-            <div 
-                className={classes.roundCornerBackGround} 
+            <div
+                className={classes.roundCornerBackGround}
                 style={{
-                    height:'60px',
+                    height: '60px',
                     textAlign: 'center',
                     display: 'flex',
                     flexDirection: 'column',
@@ -77,15 +77,15 @@ const MatchingMainPage = () => {
 
             </div>
             <SwipeableContainer>
-                <FindTherapyCard/>
-                <GoogleConfirmCard/>
-                <LoadingCard/>
-                <TherapyConfirmCard setBalance = {setBalance}/>
-                <TherapyMatchedCard/>
+                <FindTherapyCard />
+                <GoogleConfirmCard />
+                <LoadingCard />
+                <TherapyConfirmCard setBalance={setBalance} />
+                <TherapyMatchedCard />
 
-            {/* Add more cards as needed */}
+                {/* Add more cards as needed */}
             </SwipeableContainer>
-        
+
         </div>
     );
 };

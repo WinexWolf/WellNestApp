@@ -11,22 +11,22 @@ function Mood7() {
     setIsListOpen(!isListOpen);
     };
     
-     const handleModal = () => {
-       if (openModal) {
-         setOpenModal(false);
-       }
-       if (!openModal) {
-         setOpenModal(true);
-       }
-     };
+  const handleModal = () => {
+    if (openModal) {
+      setOpenModal(false);
+    }
+    if (!openModal) {
+      setOpenModal(true);
+    }
+  };
     
 
-    const [selectedValue, setSelectedValue] = useState("");
+  const [selectedValue, setSelectedValue] = useState("");
 
-    const handleSelectChange = (event) => {
-        setSelectedValue(event.target.value);
-        setOpenModal(true);
-    };
+  const handleSelectChange = (event) => {
+    setSelectedValue(event.target.value);
+    setOpenModal(true);
+  };
 
   const names = [
     { value: "Really Happy", name: "Really Happy" },

@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 const customButtonStyle = {
     fontSize: '14px',
     padding: '6px',
+    backgroundColor: "#0087E8",
 };
 
 const customButtonStyleOpaque = {

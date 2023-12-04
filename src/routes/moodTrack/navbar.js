@@ -8,7 +8,7 @@ const BottomNavbar = () => {
   useEffect(() => {
     // Set the active tab based on the current URL
     const pathname = location.pathname;
-    if (pathname === "/") {
+    if (pathname.startsWith("/therapy_matching")) {
       setActiveItem("Therapy");
     } else if (pathname.startsWith("/moodTrack")) {
       setActiveItem("Mood");
@@ -48,7 +48,7 @@ const BottomNavbar = () => {
   );
 
   return (
-    <nav className="fixed bottom-0 w-auto shadow-md">
+    <nav className="fixed bottom-0 w-auto shadow-md w-full z-50">
       <div className="flex w-auto justify-between px-4">
         {renderItem("Therapy", "/therapy_matching/welcome")}
         {renderItem("Mood", "/moodTrack/mood0")}

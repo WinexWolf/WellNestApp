@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Card from '@mui/material/Card';
 //import { makeStyles } from '@mui/styles';
 import { makeStyles } from "mui-styles";
@@ -9,8 +9,8 @@ const useStyles = makeStyles({
         width: '90%',
         flexGrow: 1,
         position: 'relative',
-        overflow: 'hidden'
-      },
+        overflow: 'hidden',
+    },
     card: {
         '&&': {
             position: 'absolute',
@@ -21,7 +21,7 @@ const useStyles = makeStyles({
             transition: 'transform 0.5s ease-in-out', // Ensures smooth transition
             transform: 'translateX(100%)', // Initial position off-screen
         },
-       
+
     },
     buttonContainer: {
         textAlign: 'center', // Center the buttons
@@ -40,10 +40,10 @@ const SwipeableContainer = ({ children }) => {
         }
         return balance;
     }
-    
-      // Set coins/sessions balance
+
+    // Set coins/sessions balance
     const setLocal = (balanceType, balance) => localStorage.setItem(balanceType, balance.toString());
-    var isMatched = getLocal('therapist_is_matched') == 1;
+    var isMatched = getLocal('therapist_is_matched') === 1;
     const classes = useStyles();
     const [activeCardIndex, setActiveCardIndex] = useState(isMatched ? 4 : 0);
     const [visibleCards, setVisibleCards] = useState([true, true, true, true, true]);
@@ -63,9 +63,9 @@ const SwipeableContainer = ({ children }) => {
     };
 
     return (
-        <div 
-            className="flex flex-col justify-around items-center" 
-            style={{flexGrow: 1, width: '100%'}}
+        <div
+            className="flex flex-col justify-around items-center"
+            style={{ flexGrow: 1, width: '100%' }}
         >
             <div className={classes.cardContainer}>
                 {React.Children.map(children, (child, index) => {
@@ -80,7 +80,7 @@ const SwipeableContainer = ({ children }) => {
                     let clonedChild;
 
                     // Clone the child and wrap it inside the Card component
-                    clonedChild = React.cloneElement(child, { 
+                    clonedChild = React.cloneElement(child, {
                         handleSwipe,
                         active: index === activeCardIndex
                     });
@@ -120,6 +120,6 @@ const SwipeableContainer = ({ children }) => {
         </div>
     );
 };
-  
+
 
 export default SwipeableContainer;

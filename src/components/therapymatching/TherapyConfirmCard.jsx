@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 //import { makeStyles } from '@mui/styles';
 import { makeStyles } from "mui-styles";
 import Button from "@mui/material/Button";
@@ -11,10 +11,10 @@ const useStyles = makeStyles({
         backgroundColor: 'rgba(129, 200, 251, 0.15)',
         borderRadius: '20px',
         marginTop: '10px',
-        height: '97%',
+        height: '95%',
     },
 
-    flexContainer:{
+    flexContainer: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -70,12 +70,12 @@ const TherapyConfirmCard = ({ handleSwipe, active, setBalance }) => {
         }
         return balance;
     }
-    
-      // Set coins/sessions balance
+
+    // Set coins/sessions balance
     const setLocal = (balanceType, balance) => localStorage.setItem(balanceType, balance.toString());
 
     const getNextTherapist = () => {
-        
+
         var matchedTherapist = getLocal('next_therapist');
         if (!matchedTherapist) {
             matchedTherapist = 0;
@@ -107,7 +107,7 @@ const TherapyConfirmCard = ({ handleSwipe, active, setBalance }) => {
     }, [active, handleSwipe]);
 
     return (
-        <div className = {classes.background}>
+        <div className={classes.background}>
             <Modal
                 open={open}
                 onClose={handleConfirm}
@@ -115,28 +115,28 @@ const TherapyConfirmCard = ({ handleSwipe, active, setBalance }) => {
                 aria-describedby="modal-modal-description"
             >
                 <Box className={classes.modelStyle}>
-                    <div style={{textAlign: 'center'}}>
+                    <div style={{ textAlign: 'center' }}>
                         <div className={classes.smallContent}>
                             Your appointment with
                         </div>
-                        <div 
-                            className={classes.smallContent} 
+                        <div
+                            className={classes.smallContent}
                             style={{
-                                paddingTop:'5px',
-                                paddingBottom:'5px',
+                                paddingTop: '5px',
+                                paddingBottom: '5px',
                                 fontWeight: 'bold',
                             }}
                         >
                             {currentTherapist.Name}
                         </div>
                         <div className={classes.smallContent}>
-                            has been confirmed for 
+                            has been confirmed for
                         </div>
-                        <div 
+                        <div
                             className={classes.smallContent}
                             style={{
-                                paddingTop:'5px',
-                                paddingBottom:'5px',
+                                paddingTop: '5px',
+                                paddingBottom: '5px',
                                 fontWeight: 'bold',
                             }}
                         >
@@ -146,10 +146,10 @@ const TherapyConfirmCard = ({ handleSwipe, active, setBalance }) => {
                             at
                         </div>
                         <div
-                            className={classes.smallContent} 
+                            className={classes.smallContent}
                             style={{
-                                paddingTop:'5px',
-                                paddingBottom:'5px',
+                                paddingTop: '5px',
+                                paddingBottom: '5px',
                                 fontWeight: 'bold',
                             }}
                         >
@@ -157,13 +157,13 @@ const TherapyConfirmCard = ({ handleSwipe, active, setBalance }) => {
                         </div>
                     </div>
                     <div style={{
-                        display:"flex",
-                        flexDirection:"row",
-                        justifyContent:"end",
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "end",
                         paddingTop: '20px'
                     }}>
-                        <Button 
-                            variant="contained" 
+                        <Button
+                            variant="contained"
                             style={{
                                 backgroundColor: '#0087E8',
                             }}
@@ -174,75 +174,75 @@ const TherapyConfirmCard = ({ handleSwipe, active, setBalance }) => {
                     </div>
                 </Box>
             </Modal>
-            <div className = {classes.flexContainer}>
+            <div className={classes.flexContainer}>
                 <div className={classes.firstLine}>
                     Therapist Matched!
                 </div>
-                <div style={{width: '100%'}}>
+                <div style={{ width: '100%' }}>
                     <img
                         src={currentTherapist.Src}
                         alt={currentTherapist.Name}
-                        style={{ 
+                        style={{
                             maxWidth: '50%',
                             maxHeight: '100%',
                             aspectRatio: '1/1'
                         }}
                     />
                 </div>
-                <div 
+                <div
                     className={classes.smallTitle}
-                    style ={{paddingTop: '20px'}}
+                    style={{ paddingTop: '20px' }}
                 >
                     Name:
                 </div>
-                <div 
+                <div
                     className={classes.smallContent}
-                    style ={{paddingTop: '5px'}}
+                    style={{ paddingTop: '5px' }}
                 >
                     {currentTherapist.Name}
                 </div>
-                <div 
+                <div
                     className={classes.smallTitle}
-                    style ={{paddingTop: '5px'}}
+                    style={{ paddingTop: '5px' }}
                 >
                     Qualifications:
                 </div>
-                <div 
+                <div
                     className={classes.smallContent}
-                    style ={{paddingTop: '5px'}}
+                    style={{ paddingTop: '5px' }}
                 >
                     {currentTherapist.Qualifications}
                 </div>
-                <div 
+                <div
                     className={classes.smallTitle}
-                    style ={{paddingTop: '20px'}}
+                    style={{ paddingTop: '20px' }}
                 >
                     Date:
                 </div>
-                <div 
+                <div
                     className={classes.smallContent}
-                    style ={{paddingTop: '5px'}}
+                    style={{ paddingTop: '5px' }}
                 >
                     {currentTherapist.Date}
                 </div>
-                <div 
+                <div
                     className={classes.smallTitle}
-                    style ={{paddingTop: '5px'}}
+                    style={{ paddingTop: '5px' }}
                 >
                     Time:
                 </div>
-                <div 
+                <div
                     className={classes.smallContent}
-                    style ={{paddingTop: '5px'}}
+                    style={{ paddingTop: '5px' }}
                 >
                     {currentTherapist.Time} (30 Minutes Session)
                 </div>
-                <div 
-                    className={classes.buttonContainer} 
-                    style={{paddingTop: '20px'}}
+                <div
+                    className={classes.buttonContainer}
+                    style={{ paddingTop: '20px' }}
                 >
-                    <Button 
-                        variant="contained" 
+                    <Button
+                        variant="contained"
                         style={{
                             backgroundColor: '#FFB61D',
                             width: '100px',
@@ -257,8 +257,8 @@ const TherapyConfirmCard = ({ handleSwipe, active, setBalance }) => {
                     >
                         Rematch
                     </Button>
-                    <Button 
-                        variant="contained" 
+                    <Button
+                        variant="contained"
                         style={{
                             backgroundColor: '#0087E8',
                             width: '100px',
@@ -269,8 +269,8 @@ const TherapyConfirmCard = ({ handleSwipe, active, setBalance }) => {
                         Confirm
                     </Button>
                 </div>
-                <Button 
-                    variant="contained" 
+                <Button
+                    variant="contained"
                     style={{
                         backgroundColor: '#E80000',
                         width: '100px',

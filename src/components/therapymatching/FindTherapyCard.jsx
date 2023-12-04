@@ -12,7 +12,7 @@ const useStyles = makeStyles({
         height: '90%',
     },
 
-    flexContainer:{
+    flexContainer: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -78,18 +78,19 @@ const useStyles = makeStyles({
 const FindTherapyCard = ({ handleSwipe }) => {
     const classes = useStyles();
     return (
-        <div className = {classes.background}>
-            <div className = {classes.flexContainer}>
+        <div className={classes.background}>
+            <div className={classes.flexContainer}>
                 <div className={classes.firstLine}>
                     Find Your Therapist Today!
                 </div>
                 <div className={classes.secondLine}>
                     Click “Find Help” to get matched with a therapist we recommend!
                 </div>
-                <Button 
+                <Button
                     className={classes.roundButton}
-                    variant="contained" 
+                    variant="contained"
                     color="primary"
+                    style={{ backgroundColor: "#0087E8" }}
                     onClick={() => {
                         handleSwipe(1);
                     }}

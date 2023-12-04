@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 //import { makeStyles } from '@mui/styles';
 import Loading from './Loading';
 import Button from "@mui/material/Button";
@@ -16,8 +16,8 @@ const useStyles = makeStyles({
         alignItems: 'center',
         justifyContent: 'center',
 
-    },   
-    flexContainer:{
+    },
+    flexContainer: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -25,7 +25,7 @@ const useStyles = makeStyles({
         textAlign: 'center',
         marginTop: '40px',
         height: '90%',
-    }, 
+    },
     firstLine: {
         color: '#232323',
         fontSize: '30px',
@@ -39,7 +39,7 @@ const useStyles = makeStyles({
     },
 });
 
-const LoadingCard = ({ handleSwipe, active}) => {
+const LoadingCard = ({ handleSwipe, active }) => {
     const classes = useStyles();
     useEffect(() => {
         let timer;
@@ -53,8 +53,8 @@ const LoadingCard = ({ handleSwipe, active}) => {
         }; // Clean up the timer
     }, [active, handleSwipe]);
     return (
-        <div className = {classes.flexContainer}>
-            <div 
+        <div className={classes.flexContainer}>
+            <div
                 style={{
                     flexGrow: 0.5,
                     display: 'flex',
@@ -63,7 +63,7 @@ const LoadingCard = ({ handleSwipe, active}) => {
                     justifyContent: 'center',
                 }}
             >
-                <div 
+                <div
                     style={{
                         maxWidth: '400px',
                         width: '70%',
@@ -72,21 +72,21 @@ const LoadingCard = ({ handleSwipe, active}) => {
                 >
                     <Loading />
                 </div>
-                <div className={classes.secondLine} style={{paddingTop: '10px'}}>
+                <div className={classes.secondLine} style={{ paddingTop: '10px' }}>
                     Matching with Therapist...
                 </div>
             </div>
-            
-            
 
-            
+
+
+
             <div className={classes.background}>
                 <div className={classes.firstLine}>
-                Based on your schedule we’ll match you with the best therapist
+                    Based on your schedule we’ll match you with the best therapist
                 </div>
-                <Button 
-                    variant="contained" 
-                    style={{backgroundColor: '#E80000', width: '100px'}}
+                <Button
+                    variant="contained"
+                    style={{ backgroundColor: '#E80000', width: '100px' }}
                     onClick={() => handleSwipe(0)}
                 >
                     Cancel

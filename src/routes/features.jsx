@@ -6,7 +6,7 @@ const features = [
     imageLink: "images/tm.svg",
     featureName: "Therapy Matching",
     description: "",
-    redirectLink: "/features",
+    redirectLink: "/therapy_matching/welcome",
     isDisabled: false
   },
   {
@@ -22,7 +22,7 @@ const features = [
     imageLink: "images/mt.svg",
     featureName: "Mood Tracking",
     description: "",
-    redirectLink: "/features",
+    redirectLink: "/moodTrack/mood0",
     isDisabled: false
   },
   {

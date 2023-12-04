@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import TitleBar from "./titlebar";
 import DarthVader from "../../images/DarthVader.png";
-import downArrow from "../../images/downArrow.png";
 import BasicSelect from "./dropDown";
 import { Button } from "@mui/material";
 
@@ -45,7 +44,7 @@ function Mood2() {
               variant="contained"
               href="/moodTrack/mood8"
               className="mt-2 bg-sky-blue"
-              style={{marginTop:"120px"}}
+              style={{ marginTop:"120px", backgroundColor: "#0087E8" }}
             >
               Continue
             </Button>

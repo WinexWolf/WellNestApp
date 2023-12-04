@@ -1,7 +1,5 @@
-import { StyledEngineProvider } from "@mui/material";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 //  React Router
@@ -20,7 +18,6 @@ import BreathingExercise from "./components/play/BreathingExercise";
 import Rewards from "./routes/rewards/Rewards";
 import MatchingWelcomePage from "./routes/matching/MatchingWelcomePage";
 import MatchingMainPage from "./routes/matching/MatchingMainPage";
-import BottomNavbar from "./routes/moodTrack/navbar";
 import Mood0 from "./routes/moodTrack/mood0";
 import Mood1 from "./routes/moodTrack/mood1";
 import Mood2 from "./routes/moodTrack/mood2";
