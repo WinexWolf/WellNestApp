@@ -8,6 +8,7 @@ import {
   redirect,
   RouterProvider,
 } from "react-router-dom";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Root from "./routes/root";
 import ErrorPage from "./routes/error";
 import Layout from "./routes/layout";
@@ -27,6 +28,14 @@ import Mood5 from "./routes/moodTrack/mood5";
 import Mood6 from "./routes/moodTrack/mood6";
 import Mood7 from "./routes/moodTrack/mood7";
 import Mood8 from "./routes/moodTrack/mood8";
+
+
+// Material-UI theme
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Cabin, sans-serif', // Set "Cabin" as the default font family
+  },
+});
 
 const router = createBrowserRouter([
   {
@@ -119,12 +128,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-    {/*
-        <StyledEngineProvider injectFirst>
-            <App />
-            </StyledEngineProvider>
-    */}
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>
 );
 

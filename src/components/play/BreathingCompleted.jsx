@@ -30,6 +30,7 @@ export default function BreathingCompleted({ coins }) {
     localStorage.setItem('coins', updatedCoins.toString());
 
     return (
+
         <div className='flex flex-col justify-center items-center'>
             <div className='text-center text-30px font-bold pt-8'>Congratulations!</div>
             <div className='flex flex-col justify-center items-center'>
