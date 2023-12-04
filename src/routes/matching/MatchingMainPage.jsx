@@ -5,6 +5,7 @@ import FindTherapyCard from '../../components/therapymatching/FindTherapyCard';
 import GoogleConfirmCard from '../../components/therapymatching/GoogleConfirmCard';
 import LoadingCard from '../../components/therapymatching/LoadingCard';
 import TherapyConfirmCard from '../../components/therapymatching/TherapyConfirmCard';
+import TherapyMatchedCard from '../../components/therapymatching/TherapyMatchedCard';
 
 const useStyles = makeStyles({
     flexContainer: {
@@ -39,8 +40,8 @@ const MatchingMainPage = () => {
     const classes = useStyles();
     const getLocal = (balanceType) => {
         let balance = localStorage.getItem(balanceType);
-        if (!balance) {
-            balance = 0;
+        if (!balance || balance < 0) {
+            balance = 5;
             setLocal(balanceType, balance)
         } else {
             balance = parseInt(balance, 10);
@@ -78,9 +79,7 @@ const MatchingMainPage = () => {
                 <GoogleConfirmCard/>
                 <LoadingCard/>
                 <TherapyConfirmCard setBalance = {setBalance}/>
-                <div style={{height: '100%', width: '100%', backgroundColor: 'orange'}}>
-                    card5
-                </div>
+                <TherapyMatchedCard/>
 
             {/* Add more cards as needed */}
             </SwipeableContainer>

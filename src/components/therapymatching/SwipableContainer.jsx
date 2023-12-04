@@ -31,8 +31,23 @@ const useStyles = makeStyles({
 });
 
 const SwipeableContainer = ({ children }) => {
+
+    const getLocal = (balanceType) => {
+        let balance = localStorage.getItem(balanceType);
+        if (!balance) {
+            balance = 0;
+            setLocal(balanceType, balance)
+        } else {
+            balance = parseInt(balance, 10);
+        }
+        return balance;
+    }
+    
+      // Set coins/sessions balance
+    const setLocal = (balanceType, balance) => localStorage.setItem(balanceType, balance.toString());
+    var isMatched = getLocal('therapist_is_matched') == 1;
     const classes = useStyles();
-    const [activeCardIndex, setActiveCardIndex] = useState(0);
+    const [activeCardIndex, setActiveCardIndex] = useState(isMatched ? 4 : 0);
     const [visibleCards, setVisibleCards] = useState([true, true, true, true, true]);
 
     const handleSwipe = (idx) => {
@@ -67,21 +82,10 @@ const SwipeableContainer = ({ children }) => {
                     let clonedChild;
 
                     // Clone the child and wrap it inside the Card component
-                    if (
-                        child.type === LoadingCard ||
-                        child.type === TherapyConfirmCard
-                    ) {
-                        // clonedChild = <LoadingCard handleSwipe={handleSwipe} active={index === activeCardIndex}/>;
-                        clonedChild = React.cloneElement(child, { 
-                            handleSwipe,
-                            active: index === activeCardIndex
-                        });
-                    } else {
-                        clonedChild = React.cloneElement(child, { handleSwipe });
-                    }
-                    // const clonedChild = React.cloneElement(child, { 
-                    //     handleSwipe
-                    // });
+                    clonedChild = React.cloneElement(child, { 
+                        handleSwipe,
+                        active: index === activeCardIndex
+                    });
 
                     return (
                         <Card

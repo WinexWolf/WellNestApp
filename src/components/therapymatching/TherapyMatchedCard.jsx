@@ -58,7 +58,8 @@ const useStyles = makeStyles({
     }
 });
 
-const TherapyConfirmCard = ({ handleSwipe, active, setBalance }) => {
+const TherapyMatchedCard = ({ handleSwipe, active}) => {
+
     const getLocal = (balanceType) => {
         let balance = localStorage.getItem(balanceType);
         if (!balance) {
@@ -73,14 +74,13 @@ const TherapyConfirmCard = ({ handleSwipe, active, setBalance }) => {
       // Set coins/sessions balance
     const setLocal = (balanceType, balance) => localStorage.setItem(balanceType, balance.toString());
 
-    const getNextTherapist = () => {
-        setLocal('therapist_is_matched', 1);
-        var matchedTherapist = getLocal('next_therapist');
+    const getCurrentTherapist = () => {
+        var matchedTherapist = (
+                getLocal('next_therapist') - 1 + TherapistInfoModels.length
+            ) % TherapistInfoModels.length;
         if (!matchedTherapist) {
             matchedTherapist = 0;
         }
-        var nextTherapist = (matchedTherapist + 1) % TherapistInfoModels.length;
-        setLocal('next_therapist', nextTherapist);
         return TherapistInfoModels[matchedTherapist];
     };
     const classes = useStyles();
@@ -88,16 +88,18 @@ const TherapyConfirmCard = ({ handleSwipe, active, setBalance }) => {
         TherapistInfoModels[0]
     );
     const [open, setOpen] = React.useState(false);
-    const handleConfirm = () => {
+    const handleCancelMeeting = () => {
         setOpen(false);
-        setLocal('sessions_balance', getLocal('sessions_balance') - 1)
-        setBalance(getLocal('sessions_balance'));
-        handleSwipe(4);
+        setLocal('therapist_is_matched', 0);
+        handleSwipe(0);
+    };
+    const handleStay = () => {
+        setOpen(false);
     };
 
     useEffect(() => {
         if (active) {
-            setCurrentTherapist(getNextTherapist);
+            setCurrentTherapist(getCurrentTherapist);
         }
         return () => {
         };
@@ -107,14 +109,14 @@ const TherapyConfirmCard = ({ handleSwipe, active, setBalance }) => {
         <div className = {classes.background}>
             <Modal
                 open={open}
-                onClose={handleConfirm}
+                onClose={handleStay}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
                 <Box className={classes.modelStyle}>
                     <div style={{textAlign: 'center'}}>
                         <div className={classes.smallContent}>
-                            Your appointment with
+                            Are you sure you want to cancel your appointment with
                         </div>
                         <div 
                             className={classes.smallContent} 
@@ -124,56 +126,42 @@ const TherapyConfirmCard = ({ handleSwipe, active, setBalance }) => {
                                 fontWeight: 'bold',
                             }}
                         >
-                            {currentTherapist.Name}
-                        </div>
-                        <div className={classes.smallContent}>
-                            has been confirmed for 
-                        </div>
-                        <div 
-                            className={classes.smallContent}
-                            style={{
-                                paddingTop:'5px',
-                                paddingBottom:'5px',
-                                fontWeight: 'bold',
-                            }}
-                        >
-                            {currentTherapist.Date}
-                        </div>
-                        <div className={classes.smallContent}>
-                            at
-                        </div>
-                        <div
-                            className={classes.smallContent} 
-                            style={{
-                                paddingTop:'5px',
-                                paddingBottom:'5px',
-                                fontWeight: 'bold',
-                            }}
-                        >
-                            {currentTherapist.Time}
+                            {currentTherapist.Name}?
                         </div>
                     </div>
                     <div style={{
                         display:"flex",
                         flexDirection:"row",
-                        justifyContent:"end",
+                        justifyContent:"center",
                         paddingTop: '20px'
                     }}>
                         <Button 
                             variant="contained" 
                             style={{
                                 backgroundColor: '#0087E8',
+                                marginRight: '30px'
                             }}
-                            onClick={handleConfirm}
+                            onClick={handleStay}
                         >
-                            OK
+                            Do not Cancel
                         </Button>
+                        <Button 
+                            variant="contained" 
+                            style={{
+                                backgroundColor: '#E80000',
+                                marginLeft: '30px'
+                            }}
+                            onClick={handleCancelMeeting}
+                        >
+                            Yes, Cancel
+                        </Button>
+
                     </div>
                 </Box>
             </Modal>
             <div className = {classes.flexContainer}>
                 <div className={classes.firstLine}>
-                    Therapist Matched!
+                    Upcoming Therapy Session
                 </div>
                 <div style={{width: '100%'}}>
                     <img
@@ -241,13 +229,13 @@ const TherapyConfirmCard = ({ handleSwipe, active, setBalance }) => {
                     <Button 
                         variant="contained" 
                         style={{
-                            backgroundColor: '#FFB61D',
+                            backgroundColor: '#E80000',
                             width: '100px',
                             marginRight: '20px'
                         }}
-                        onClick={() => handleSwipe(2)}
+                        onClick={() => setOpen(true)}
                     >
-                        Rematch
+                        Cancel
                     </Button>
                     <Button 
                         variant="contained" 
@@ -256,26 +244,16 @@ const TherapyConfirmCard = ({ handleSwipe, active, setBalance }) => {
                             width: '100px',
                             marginLeft: '20px'
                         }}
-                        onClick={() => setOpen(true)}
+                        onClick={() => {
+                            window.open('https://cmu.zoom.us/j/99143300269?pwd=bklTWTQ3NGJNRVhubWVtMlhMUGxsQT09', "_blank", "noreferrer");
+                        }}
                     >
-                        Confirm
+                        Join
                     </Button>
                 </div>
-                <Button 
-                    variant="contained" 
-                    style={{
-                        backgroundColor: '#E80000',
-                        width: '100px',
-                        marginTop: '10px'
-                    }}
-                    onClick={() => handleSwipe(0)}
-                >
-                    Cancel
-                </Button>
-
             </div>
         </div>
     );
 };
 
-export default TherapyConfirmCard;
+export default TherapyMatchedCard;

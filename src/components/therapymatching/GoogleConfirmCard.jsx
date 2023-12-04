@@ -45,7 +45,7 @@ const useStyles = makeStyles({
     }
 });
 
-const GoogleConfirmCard = ({ handleSwipe }) => {
+const GoogleConfirmCard = ({ handleSwipe,}) => {
     const classes = useStyles();
     return (
         <div className = {classes.background}>
