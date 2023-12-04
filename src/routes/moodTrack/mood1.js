@@ -1,10 +1,7 @@
 import React from "react";
-import MoodTrack from "../../images/moodTrack.png";
-import { Link } from "react-router-dom";
 import TitleBar from "./titlebar";
 import DarthVader from "../../images/DarthVader.png";
 import Face from "../../images/Face4.png";
-import ArrowIcon from "../../images/Arrow.png";
 import { Button } from "@mui/material";
 
 function Mood1() {

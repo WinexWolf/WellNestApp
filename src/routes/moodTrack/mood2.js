@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import TitleBar from "./titlebar";
 import DarthVader from "../../images/DarthVader.png";
-import downArrow from "../../images/downArrow.png";
 import BasicSelect from "./dropDown";
 import { Button } from "@mui/material";
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Card from '@mui/material/Card';
 //import { makeStyles } from '@mui/styles';
 import { makeStyles } from "mui-styles";
@@ -43,7 +43,7 @@ const SwipeableContainer = ({ children }) => {
 
     // Set coins/sessions balance
     const setLocal = (balanceType, balance) => localStorage.setItem(balanceType, balance.toString());
-    var isMatched = getLocal('therapist_is_matched') == 1;
+    var isMatched = getLocal('therapist_is_matched') === 1;
     const classes = useStyles();
     const [activeCardIndex, setActiveCardIndex] = useState(isMatched ? 4 : 0);
     const [visibleCards, setVisibleCards] = useState([true, true, true, true, true]);

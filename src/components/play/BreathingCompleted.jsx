@@ -10,7 +10,7 @@ const customButtonStyle = {
 const customButtonStyleOpaque = {
     fontSize: '14px',
     padding: '6px',
-    backgroundColor: "#0087E8",
+    backgroundColor: '#81C8FB',
 };
 
 export default function BreathingCompleted({ coins }) {

@@ -1,6 +1,5 @@
 import React from "react";
 import MoodTrack from "../../images/moodTrack.png";
-import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 
 function Mood0() {

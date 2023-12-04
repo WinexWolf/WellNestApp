@@ -1,10 +1,5 @@
 import React, { useState } from "react";
 import TitleBar from "./titlebar";
-import {
-  Typography,
-  Avatar,
-  Box
-} from "@mui/material";
 import InstagramIcon from "../../images/Instagram.png";
 import WhatsAppIcon from "../../images/Whatsapp.png";
 import Modal from "./modal";
