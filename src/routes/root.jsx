@@ -21,11 +21,11 @@ const Root = () => {
   return (
     <div className="h-screen">
       {/* IMAGE */}
-      <animated.div className="flex justify-center w-30 h-30 mt-20 mb-[20px]" style={imageAnimation}>
+      <animated.div className="flex justify-center w-25 h-25 mt-10 mb-[0px]" style={imageAnimation}>
         <img
-          src="images/WellNestIcon_transparent.png"
+          src="images/WellNestLogo.png"
           alt="WellNest icon"
-          className="max-w-full mb-8"
+          className="max-w-full mb-1"
         ></img>
       </animated.div>
       {/* Text Section */}
