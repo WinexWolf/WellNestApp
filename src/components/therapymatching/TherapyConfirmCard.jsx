@@ -183,7 +183,8 @@ const TherapyConfirmCard = ({ handleSwipe, active, setBalance }) => {
                         src={currentTherapist.Src}
                         alt={currentTherapist.Name}
                         style={{
-                            maxWidth: '50%',
+                            width: '50%',
+                            maxWidth: '300px',
                             maxHeight: '100%',
                             aspectRatio: '1/1'
                         }}
