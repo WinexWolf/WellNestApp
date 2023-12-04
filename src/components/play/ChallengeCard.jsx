@@ -24,7 +24,7 @@ export default function ChallengeCard({ imgSrc, imgAlt, title, coinCnt, routeTar
           image={selectedImgSrc}
         />
 
-        <CardContent>
+        <CardContent sx={{ paddingLeft: 2, paddingRight: 2, paddingTop: 0, paddingBottom: 0 }}>
           {isCompleted ? (
             <div className="text-24px font-semibold text-center text-zinc-500">
               {title}
