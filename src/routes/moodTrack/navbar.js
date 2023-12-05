@@ -38,10 +38,9 @@ const BottomNavbar = () => {
       }
 
       style={{
-        boxShadow: "0px -5px 10px rgba(0, 0, 0, 0.25)",
+        boxShadow: "0px 2px 4px 0px rgba(0, 0, 0, 0.25)",
         textAlign: "center",
         textDecoration: "none", // Remove underline
-        color: "inherit", // Inherit the color from the parent
       }}
       to={path}
 
