@@ -21,7 +21,7 @@ const Root = () => {
   return (
     <div className="h-screen">
       {/* IMAGE */}
-      <animated.div className="flex justify-center w-25 h-25 mt-10 mb-[0px]" style={imageAnimation}>
+      <animated.div className="flex justify-center w-25 h-25 mt-5 mb-[0px]" style={imageAnimation}>
         <img
           src="images/WellNestLogo.png"
           alt="WellNest icon"
