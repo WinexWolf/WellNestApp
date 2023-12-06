@@ -9,19 +9,6 @@ const TitleBar = ({ showBackButton, link }) => {
       </div>
       {showBackButton && (
         <div className="cursor-pointer">
-          {/*  <div className="w-[60px] h-[30px] px-4 py-1.5 bg-green-600 rounded shadow justify-center items-center gap-2 inline-flex">
-             <Link
-          style={{
-            textDecoration: "none", // Remove underline
-            color: "inherit", // Inherit the color from the parent
-          }}
-          to={link}
-        >
-            <div className="text-center text-white text-sm font-medium font-cabin uppercase leading-normal tracking-tight">
-              Back
-            </div>
-            </Link>
-          </div> */}
           <Button
             variant="contained"
             href={link}

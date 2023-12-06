@@ -9,17 +9,19 @@ function Mood7() {
 
   const toggleList = () => {
     setIsListOpen(!isListOpen);
-    };
-    
+  };
+
   const handleModal = () => {
     if (openModal) {
+      // Save the selected mood to local storage
+      localStorage.setItem("userMood", selectedValue);
+
       setOpenModal(false);
     }
     if (!openModal) {
       setOpenModal(true);
     }
   };
-    
 
   const [selectedValue, setSelectedValue] = useState("");
 
@@ -36,34 +38,36 @@ function Mood7() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <>
       <TitleBar showBackButton link={"/moodTrack/mood3"} />
-      <div className="w-[339px] h-[369px] bg-sky-300 top-[70px] mt-32 bg-opacity-20 rounded-[20px] flex flex-col items-center ">
-        <div className="text-center font-cabin text-neutral-800 mt-4 text-3xl font-normal">
-          How Do you Feel Today, My Friend?{" "}
+      <div className="flex flex-col items-center justify-center">
+        <div className="w-[339px] h-[369px] bg-sky-300 top-[70px] mt-32 bg-opacity-20 rounded-[20px] flex flex-col items-center ">
+          <div className="text-center font-cabin text-neutral-800 mt-4 text-3xl font-normal">
+            How Do you Feel Today, My Friend?{" "}
+          </div>
+          <BasicSelect
+            mt={"mt-14"}
+            label={!openModal ? "Select the Mood to Update to here" : ""}
+            list={names}
+            onChange={handleSelectChange} // Pass the callback function
+            bgColor={"white"}
+          />
+          {openModal && (
+            <Modal
+              showCancelButton
+              onOk={handleModal}
+              onCancel={() => {
+                setOpenModal(false);
+                setSelectedValue("");
+              }}
+              mt={`mt-24`}
+              modalText={`You want to set/change your today’s mood to ${selectedValue} ?`}
+              link={"/moodTrack/mood6"}
+            ></Modal>
+          )}
         </div>
-        <BasicSelect
-          mt={"mt-14"}
-          label={!openModal ? "Select the Mood to Update to here" : ""}
-          list={names}
-          onChange={handleSelectChange} // Pass the callback function
-          bgColor={"white"}
-        />
-        {openModal && (
-          <Modal
-            showCancelButton
-            onOk={handleModal}
-            onCancel={() => {
-              setOpenModal(false);
-              setSelectedValue("");
-            }}
-            mt={`mt-24`}
-            modalText={`You want to set/change your today’s mood to ${selectedValue} ?`}
-            link={"/moodTrack/mood5"}
-          ></Modal>
-        )}
       </div>
-    </div>
+    </>
   );
 }
 

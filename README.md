@@ -55,6 +55,8 @@ Our Product Increment 1 (MVP) of WellNest has the following limitations:
 
     - **No Sharing Mood Data on Third-Party Applications**: Currently, WellNest doesn't allow sharing Mood data with third-party applications. Instead, the system will only notify the user that the mood data is successfully shared to simulate the behavior of sharing the mood data through a third-party application!
     - **No Database Storage Functionality**: At present, WellNest doesn't possess the functionality to store mood data in a database. Hence, the user cannot retain or access historical mood information.
+    - **Chat with one Avatar only**: At present, WellNest possesses the functionality to chat with the Darth Vader avatar only.
+    - **Hard coded Chat Functionality**: At present, WellNest doesn't possess the functionality to automate chat responses etc using Natural Language Processing.
 
 3. **Play to Earn Feature**: 
 

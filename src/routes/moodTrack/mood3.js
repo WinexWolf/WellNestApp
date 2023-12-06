@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 
 function Mood3() {
   return (
-    <div className="flex flex-col items-center justify-center">
-      <TitleBar showBackButton link={"/moodTrack/mood1"} />
+          <><TitleBar showBackButton link={"/moodTrack/mood1"} /><div className="flex flex-col items-center justify-center">
       <div className="w-[328px] h-[492px] bg-sky-300 top-[7px] mt-12 bg-opacity-20 rounded-[20px] flex flex-col items-center ">
         <div className="text-center font-cabin text-neutral-800 mt-4 text-3xl font-normal">
           You haven’t entered
@@ -15,12 +14,12 @@ function Mood3() {
         </div>
         <Link
           style={{
-            textDecoration: "none", // Remove underline
+            textDecoration: "none",
             color: "inherit", // Inherit the color from the parent
           }}
           to={"/moodTrack/mood7"}
         >
-          <div className="bg-blue-500 h-[223px] w-[223px] mt-10 rounded-full flex items-center justify-center">
+          <div className="bg-blue-500 h-[223px] w-[223px] mt-10 rounded-full flex items-center justify-center shadow-lg">
             <span className="text-white text-3xl font-bold text-center font-cabin">
               Enter Your Mood Today
             </span>
@@ -36,7 +35,7 @@ function Mood3() {
           </Button>
         </div>
       </div>
-    </div>
+    </div></>
   );
 }
 

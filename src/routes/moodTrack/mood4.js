@@ -46,8 +46,8 @@ function Mood4() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <TitleBar showBackButton link={"/moodTrack/mood2"} />
+    <><TitleBar showBackButton link={"/moodTrack/mood2"} />
+      <div className="flex flex-col items-center justify-center">
       <div className="w-[328px] h-[492px] bg-sky-300 top-[7px] mt-12 bg-opacity-20 rounded-[20px] flex flex-col items-center ">
         <div className="text-center font-cabin text-neutral-800 mt-4 text-3xl font-normal">
           Historical Mood Graph
@@ -60,11 +60,9 @@ function Mood4() {
             variant="contained"
             href="/moodTrack/mood5"
             style={{ fontSize: "10px", backgroundColor: "#0087E8" }}
-            endIcon={
-              <IconButton color="inherit">
-                <ShareIcon />
-              </IconButton>
-            }
+            endIcon={<IconButton color="inherit">
+              <ShareIcon />
+            </IconButton>}
           >
             Share
           </Button>
@@ -94,7 +92,6 @@ function Mood4() {
           {data.map((item, index) => (
             <div
               key={index}
-              onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
               style={{
                 ...getBarStyles(index),
@@ -106,8 +103,7 @@ function Mood4() {
                 size={223}
                 thickness={getBarStyles(index).thickness}
                 style={{ color: getBarStyles(index).color }}
-                sx={{ position: "absolute", top: 0, left: 0 }}
-              />
+                sx={{ position: "absolute", top: 0, left: 0 }} />
             </div>
           ))}
           <Typography
@@ -122,11 +118,11 @@ function Mood4() {
               fontSize: 25, // Change the font size as needed
             }}
           >
-            {totalValue}%
+            {data[0].value}%
           </Typography>
         </div>
       </div>
-    </div>
+    </div></>
   );
 }
 

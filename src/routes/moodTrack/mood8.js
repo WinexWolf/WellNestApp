@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import TitleBar from "./titlebar";
 import DarthVader from "../../images/DarthVaderProfile.png";
 import ProfileIcon from "../../images/Profile.png";
@@ -6,43 +6,63 @@ import SendIcon from "@mui/icons-material/Send";
 import BasicSelect from "./dropDown";
 
 const Mood8 = () => {
-  const [messages, setMessages] = useState([
-    { text: "How are you feeling my young apprentice?", isMine: false },
-    { text: "The force senses your emotions.", isMine: false },
-  ]);
-  const [newMessage, setNewMessage] = useState("");
+ const initialMessages = [
+   { text: "How are you feeling my young apprentice?", isMine: false },
+   { text: "The force senses your emotions.", isMine: false },
+ ];
 
- const handleSendMessage = () => {
-   if (selectedValue.trim() !== "") {
-     // Add the selected value to the messages
-     setMessages([...messages, { text: selectedValue, isMine: true }]);
-     setNewMessage(""); // Clear the input field
-   } else if (newMessage.trim() !== "") {
-     // If the selected value is not present, send the custom message
-     setMessages([...messages, { text: newMessage, isMine: true }]);
-     setNewMessage(""); // Clear the input field
+ const [messages, setMessages] = useState(initialMessages);
+ const [newMessage, setNewMessage] = useState("");
+
+ // Load messages from local storage on component mount
+ useEffect(() => {
+   const storedMessages = JSON.parse(localStorage.getItem("chatMessages"));
+   if (storedMessages) {
+     setMessages(storedMessages);
+   } else {
+     setMessages(initialMessages); // Set initial messages if there are none in local storage
    }
- };
+ }, []);
+
+ // Save messages to local storage whenever messages state changes
+ useEffect(() => {
+   const storedMessages =
+     JSON.parse(localStorage.getItem("chatMessages")) || [];
+
+   // Ensure that the new message is added to the existing messages
+   const updatedMessages = [
+     ...storedMessages,
+     ...messages.slice(storedMessages.length),
+   ];
+
+   localStorage.setItem("chatMessages", JSON.stringify(updatedMessages));
+ }, [messages]);
 
 
-   const names = [
-     { value: "Really Happy", name: "Really Happy" },
-     { value: "Happy", name: "Happy" },
-     { value: "Sad", name: "Sad" },
-     { value: "Really Sad", name: "Really Sad" },
+  const handleSendMessage = () => {
+    if (newMessage.trim() !== "") {
+      setMessages([...messages, { text: newMessage, isMine: true }]);
+      setNewMessage(""); // Clear the input field
+    }
+  };
+
+  const names = [
+    { value: "Really Happy", name: "Really Happy" },
+    { value: "Happy", name: "Happy" },
+    { value: "Sad", name: "Sad" },
+    { value: "Really Sad", name: "Really Sad" },
   ];
-  
+
   const [selectedValue, setSelectedValue] = useState("");
 
- const handleSelectChange = (event) => {
-   setSelectedValue(event.target.value);
-   handleSendMessage(); // Send a message when a value is selected
- };
-
+  const handleSelectChange = (event) => {
+    setSelectedValue(event.target.value);
+    setMessages([...messages, { text: event.target.value, isMine: true }]);
+  };
 
   return (
     <>
-      <TitleBar showBackButton link={"/moodTrack/mood2"}/>
+      <TitleBar showBackButton link={"/moodTrack/mood2"} />
       <div className="w-600 p-5">
         <div className="h-[60vh] overflow-y-scroll rounded-8 p-2">
           {messages.map((message, index) => (
@@ -78,7 +98,7 @@ const Mood8 = () => {
             </div>
           ))}
         </div>
-        <BasicSelect 
+        <BasicSelect
           mt={"mt-5"}
           bgColor={"blue"}
           txtColor={"white"}
