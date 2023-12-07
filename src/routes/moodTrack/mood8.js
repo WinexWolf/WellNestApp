@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import TitleBar from "./titlebar";
 import DarthVader from "../../images/DarthVaderProfile.png";
 import ProfileIcon from "../../images/Profile.png";
@@ -6,43 +6,57 @@ import SendIcon from "@mui/icons-material/Send";
 import BasicSelect from "./dropDown";
 
 const Mood8 = () => {
- const initialMessages = [
-   { text: "How are you feeling my young apprentice?", isMine: false },
-   { text: "The force senses your emotions.", isMine: false },
- ];
+  const initialMessages = [
+    { text: "How are you feeling my young apprentice?", isMine: false },
+    { text: "The force senses your emotions.", isMine: false },
+  ];
 
- const [messages, setMessages] = useState(initialMessages);
- const [newMessage, setNewMessage] = useState("");
+  const [messages, setMessages] = useState(initialMessages);
+  const [newMessage, setNewMessage] = useState("");
+  const messagesContainerRef = useRef(null);
 
- // Load messages from local storage on component mount
- useEffect(() => {
-   const storedMessages = JSON.parse(localStorage.getItem("chatMessages"));
-   if (storedMessages) {
-     setMessages(storedMessages);
-   } else {
-     setMessages(initialMessages); // Set initial messages if there are none in local storage
-   }
- }, []);
+  // Load messages from local storage on component mount
+  useEffect(() => {
+    const storedMessages = JSON.parse(localStorage.getItem("chatMessages"));
+    if (storedMessages) {
+      setMessages(storedMessages);
+    } else {
+      setMessages(initialMessages);
+    }
+  }, []);
 
- // Save messages to local storage whenever messages state changes
- useEffect(() => {
-   const storedMessages =
-     JSON.parse(localStorage.getItem("chatMessages")) || [];
+  // Save messages to local storage whenever messages state changes
+  useEffect(() => {
+    const storedMessages =
+      JSON.parse(localStorage.getItem("chatMessages")) || [];
 
-   // Ensure that the new message is added to the existing messages
-   const updatedMessages = [
-     ...storedMessages,
-     ...messages.slice(storedMessages.length),
-   ];
+    const updatedMessages = [
+      ...storedMessages,
+      ...messages.slice(storedMessages.length),
+    ];
 
-   localStorage.setItem("chatMessages", JSON.stringify(updatedMessages));
- }, [messages]);
+    localStorage.setItem("chatMessages", JSON.stringify(updatedMessages));
 
+    // Scroll to the bottom of the messages container after updating messages
+    if (messagesContainerRef.current) {
+      messagesContainerRef.current.scrollTop =
+        messagesContainerRef.current.scrollHeight;
+    }
+  }, [messages]);
 
   const handleSendMessage = () => {
     if (newMessage.trim() !== "") {
       setMessages([...messages, { text: newMessage, isMine: true }]);
-      setNewMessage(""); // Clear the input field
+      setNewMessage("");
+
+      const selectedMood = localStorage.getItem("userMood") || "";
+      if (selectedMood) {
+        setMessages([
+          ...messages,
+          { text: selectedMood, isMine: false },
+          { text: "Tell me more.", isMine: false },
+        ]);
+      }
     }
   };
 
@@ -57,14 +71,27 @@ const Mood8 = () => {
 
   const handleSelectChange = (event) => {
     setSelectedValue(event.target.value);
-    setMessages([...messages, { text: event.target.value, isMine: true }]);
+    setMessages([
+      ...messages,
+      { text: event.target.value, isMine: true },
+      {
+        text: "Well, I'm " + event.target.value + " to hear that!",
+        isMine: false,
+      },
+      { text: "Tell me more.", isMine: false },
+    ]);
+
+    localStorage.setItem("userMood", event.target.value);
   };
 
   return (
     <>
       <TitleBar showBackButton link={"/moodTrack/mood2"} />
       <div className="w-600 p-5">
-        <div className="h-[60vh] overflow-y-scroll rounded-8 p-2">
+        <div
+          ref={messagesContainerRef}
+          className="h-[60vh] overflow-y-scroll rounded-8 p-2"
+        >
           {messages.map((message, index) => (
             <div
               key={index}
