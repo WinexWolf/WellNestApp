@@ -39,7 +39,7 @@ function Mood7() {
 
   return (
     <>
-      <TitleBar showBackButton link={"/moodTrack/mood3"} title='MOOD TRACKING'/>
+      <TitleBar showBackButton link={"/moodTrack/mood6"} title='MOOD TRACKING'/>
       <div className="flex flex-col items-center justify-center">
         <div className="w-[339px] h-[369px] bg-sky-300 top-[70px] mt-32 bg-opacity-20 rounded-[20px] flex flex-col items-center ">
           <div className="text-center font-cabin text-neutral-800 mt-4 text-3xl font-normal">
@@ -52,6 +52,7 @@ function Mood7() {
             onChange={handleSelectChange} // Pass the callback function
             bgColor={"white"}
           />
+          
           {openModal && (
             <Modal
               showCancelButton

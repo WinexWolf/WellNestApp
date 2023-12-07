@@ -67,7 +67,7 @@ function Mood1() {
                 <Button
                   variant="contained"
                   className="justify-center w-36"
-                  href="/moodTrack/mood3"
+                  href="/moodTrack/mood6"
                   style={{ backgroundColor: "#0087E8" }}
                 >
                   ENTER
