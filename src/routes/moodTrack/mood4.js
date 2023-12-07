@@ -46,7 +46,7 @@ function Mood4() {
   };
 
   return (
-    <><TitleBar showBackButton link={"/moodTrack/mood2"} title='MOOD TRACKING'/>
+    <><TitleBar showBackButton link={"/moodTrack/mood6"} title='MOOD TRACKING'/>
       <div className="flex flex-col items-center justify-center">
       <div className="w-[328px] h-[492px] bg-sky-300 top-[7px] mt-12 bg-opacity-20 rounded-[20px] flex flex-col items-center ">
         <div className="text-center font-cabin text-neutral-800 mt-4 text-3xl font-normal">
