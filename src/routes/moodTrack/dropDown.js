@@ -5,7 +5,14 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-export default function BasicSelect({ label, list, mt, onChange, bgColor, txtColor}) {
+export default function BasicSelect({
+  label,
+  list,
+  mt,
+  onChange,
+  bgColor,
+  txtColor,
+}) {
   const [value, setValue] = useState("");
 
   const handleChange = (event) => {
@@ -19,21 +26,22 @@ export default function BasicSelect({ label, list, mt, onChange, bgColor, txtCol
   return (
     <Box className={`${mt} bg-${bgColor}-500`} sx={{ minWidth: 328 }}>
       <FormControl fullWidth>
-        <InputLabel
-          id="demo-simple-select-label"
-          sx={{
-            color: `${txtColor}`, // Set the text color to white
-            // Add other styling properties if needed
-          }}
-        >
-          {label}
-        </InputLabel>
+        {value ? null : ( // Conditionally render the label if value is not selected
+          <InputLabel
+            id="demo-simple-select-label"
+            sx={{
+              color: `${txtColor}`, // Set the text color to white
+              // Add other styling properties if needed
+            }}
+          >
+            {label}
+          </InputLabel>
+        )}
         <Select
           sx={{
             color: `${txtColor}`, // Set the text color to white
             // Add other styling properties if needed
           }}
-          // className={"text-white"}
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={value}
