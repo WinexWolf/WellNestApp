@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import RewardCard from "../../components/rewards/RewardCard";
+import TitleBar from '../moodTrack/titlebar';
 
 
 const rewards = [
@@ -32,6 +33,7 @@ const Rewards = () => {
 
     return (
         <div>
+            <TitleBar title='PLAY TO EARN' />
             <div className="flex flex-col justify-center items-center mt-14 mb-14">
                 <Card sx={{ borderRadius: 5 }} className='w-11/12'>
                     <CardContent className="bg-calmBlue bg-opacity-20">

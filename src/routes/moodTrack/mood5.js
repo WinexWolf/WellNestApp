@@ -19,9 +19,10 @@ function Mood5() {
     
 
   return (
+    <div>
+    <TitleBar showBackButton link={"/moodTrack/mood4"} title='MOOD TRACKING'/>
     <div className="flex flex-col items-center justify-center">
-      <TitleBar showBackButton link={"/moodTrack/mood4"} />
-      <div className="w-[339px] h-[369px] bg-sky-300 top-[70px] mt-32 bg-opacity-20 rounded-[20px] flex flex-col items-center ">
+      <div className="w-11/12 h-[369px] bg-sky-300 top-[70px] mt-32 bg-opacity-20 rounded-[20px] flex flex-col items-center ">
         <div className="text-center font-cabin text-neutral-800 mt-4 text-3xl font-normal">
           Share Mood Data
         </div>
@@ -59,6 +60,7 @@ function Mood5() {
           ></Modal>
         )}
       </div>
+    </div>
     </div>
   );
 }

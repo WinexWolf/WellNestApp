@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 function Mood3() {
   return (
-          <><TitleBar showBackButton link={"/moodTrack/mood1"} /><div className="flex flex-col items-center justify-center">
-      <div className="w-[328px] h-[492px] bg-sky-300 top-[7px] mt-12 bg-opacity-20 rounded-[20px] flex flex-col items-center ">
+          <><TitleBar showBackButton link={"/moodTrack/mood1"} title='MOOD TRACKING'/><div className="flex flex-col items-center justify-center">
+      <div className="w-11/12 h-[492px] bg-sky-300 top-[7px] mt-12 bg-opacity-20 rounded-[20px] flex flex-col items-center ">
         <div className="text-center font-cabin text-neutral-800 mt-4 text-3xl font-normal">
           You haven’t entered
           <br />

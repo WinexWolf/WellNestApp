@@ -2,7 +2,7 @@ import React from "react";
 import { Button, IconButton } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
-const TitleBar = ({ showBackButton, link }) => {
+const TitleBar = ({ showBackButton, link, title }) => {
   return (
     <div className="flex items-center justify-between bg-blue-500 h-14 text-white font-cabin font-medium uppercase text-sm leading-6 pt-0 pb-2 px-4">
       {showBackButton && (
@@ -16,7 +16,7 @@ const TitleBar = ({ showBackButton, link }) => {
         </div>
       )}
       <div className="w-full h-7 text-white flex items-center text-left text-sm font-medium font-cabin uppercase leading-normal tracking-tight ml-1">
-        WELLNEST: MOOD TRACKING FEATURE
+        WELLNEST: {title} FEATURE
       </div>
     </div>
   );

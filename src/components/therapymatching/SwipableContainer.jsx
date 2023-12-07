@@ -65,7 +65,7 @@ const SwipeableContainer = ({ children }) => {
     return (
         <div
             className="flex flex-col justify-around items-center"
-            style={{ flexGrow: 1, width: '100%' }}
+            style={{ flexGrow: 1, width: '100%', height: '75vh' }}
         >
             <div className={classes.cardContainer}>
                 {React.Children.map(children, (child, index) => {
@@ -99,24 +99,6 @@ const SwipeableContainer = ({ children }) => {
                     );
                 })}
             </div>
-
-            {/* <div className={classes.buttonContainer}>
-                <Button variant="contained" onClick={() => handleSwipe(0)}>
-                    to1
-                </Button>
-                <Button variant="contained" onClick={() => handleSwipe(1)}>
-                    to2
-                </Button>
-                <Button variant="contained" onClick={() => handleSwipe(2)}>
-                    to3
-                </Button>
-                <Button variant="contained" onClick={() => handleSwipe(3)}>
-                    to4
-                </Button>
-                <Button variant="contained" onClick={() => handleSwipe(4)}>
-                    to5
-                </Button>
-            </div> */}
         </div>
     );
 };

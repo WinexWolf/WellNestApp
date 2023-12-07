@@ -7,6 +7,7 @@ import GoogleConfirmCard from '../../components/therapymatching/GoogleConfirmCar
 import LoadingCard from '../../components/therapymatching/LoadingCard';
 import TherapyConfirmCard from '../../components/therapymatching/TherapyConfirmCard';
 import TherapyMatchedCard from '../../components/therapymatching/TherapyMatchedCard';
+import TitleBar from '../moodTrack/titlebar';
 
 const useStyles = makeStyles({
     flexContainer: {
@@ -69,36 +70,39 @@ const MatchingMainPage = () => {
     const [balance, setBalance] = useState(initBalance());
 
     return (
-        <div className={classes.flexContainer}>
-            <div
-                className={classes.roundCornerBackGround}
-                style={{
-                    height: '60px',
-                    textAlign: 'center',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    marginTop: '20px',
-                }}
-            >
-                <div className={classes.firstLine}>
-                    Current Balance:
+        <div>
+            <TitleBar title="Therapy matching" />
+            <div className={classes.flexContainer}>
+                <div
+                    className={classes.roundCornerBackGround}
+                    style={{
+                        height: '60px',
+                        textAlign: 'center',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        marginTop: '20px',
+                    }}
+                >
+                    <div className={classes.firstLine}>
+                        Current Balance:
+                    </div>
+                    <div className={classes.secondLine}>
+                        {balance} sessions remained
+                    </div>
+
                 </div>
-                <div className={classes.secondLine}>
-                    {balance} sessions remained
-                </div>
+                <SwipeableContainer>
+                    <FindTherapyCard />
+                    <GoogleConfirmCard />
+                    <LoadingCard />
+                    <TherapyConfirmCard setBalance={setBalance} />
+                    <TherapyMatchedCard />
+
+                    {/* Add more cards as needed */}
+                </SwipeableContainer>
 
             </div>
-            <SwipeableContainer>
-                <FindTherapyCard />
-                <GoogleConfirmCard />
-                <LoadingCard />
-                <TherapyConfirmCard setBalance={setBalance} />
-                <TherapyMatchedCard />
-
-                {/* Add more cards as needed */}
-            </SwipeableContainer>
-
         </div>
     );
 };

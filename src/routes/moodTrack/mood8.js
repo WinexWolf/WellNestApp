@@ -86,7 +86,7 @@ const Mood8 = () => {
 
   return (
     <>
-      <TitleBar showBackButton link={"/moodTrack/mood2"} />
+      <TitleBar showBackButton link={"/moodTrack/mood2"} title='MOOD TRACKING'/>
       <div className="w-600 p-5">
         <div
           ref={messagesContainerRef}
