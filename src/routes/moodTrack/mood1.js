@@ -7,7 +7,7 @@ import { Button } from "@mui/material";
 function Mood1() {
   return (
     <>
-      <TitleBar />
+      <TitleBar title='MOOD TRACKING'/>
       <div className="bg-white">
         <div className="w-full flex justify-center relative items-center">
           <div className="h-[22px] left-[20px] top-[100px] absolute justify-center items-center inline-flex">

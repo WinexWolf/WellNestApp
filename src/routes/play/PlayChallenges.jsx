@@ -1,4 +1,5 @@
 import ChallengeCard from "../../components/play/ChallengeCard";
+import TitleBar from "../moodTrack/titlebar";
 
 const originalChallenges = [
     {
@@ -47,14 +48,15 @@ const PlayChallenges = () => {
 
     return (
         <div>
+            <TitleBar title='PLAY TO EARN' />
             <div className="flex flex-col justify-between items-center">
                 <div>
-                    <div className="font-semibold text-40px text-center pt-4">
+                    <div className="font-semibold text-40px text-center pt-4 pb-4">
                         Play to Earn Coins!
                     </div>
                 </div>
                 <div>
-                    <div className="text-16px pb-2 text-center">
+                    <div className="text-16px pb-5 text-center">
                         Use your coins to redeem free therapy session from “Rewards”!
                     </div>
                 </div>
@@ -73,7 +75,7 @@ const PlayChallenges = () => {
                     />
                 ))}
             </div >
-        </div>
+        </div >
     );
 };
 

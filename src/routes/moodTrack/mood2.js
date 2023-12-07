@@ -24,7 +24,7 @@ function Mood2() {
 
   return (
     <>
-      <TitleBar showBackButton link={"/moodTrack/mood1"} />
+      <TitleBar showBackButton link={"/moodTrack/mood1"} title='MOOD TRACKING'/>
       <div className="flex flex-col items-center mt-12 py-20 h-screen bg-white">
         <div className="flex flex-col items-center">
           {/* Image */}

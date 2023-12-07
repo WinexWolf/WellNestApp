@@ -62,7 +62,7 @@ const Mood8 = () => {
 
   return (
     <>
-      <TitleBar showBackButton link={"/moodTrack/mood2"} />
+      <TitleBar showBackButton link={"/moodTrack/mood2"} title='MOOD TRACKING'/>
       <div className="w-600 p-5">
         <div className="h-[60vh] overflow-y-scroll rounded-8 p-2">
           {messages.map((message, index) => (
