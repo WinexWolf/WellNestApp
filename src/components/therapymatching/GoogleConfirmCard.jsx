@@ -56,9 +56,14 @@ const GoogleConfirmCard = ({ handleSwipe,}) => {
                 </div>
                 <div 
                     className={classes.secondLine}
-                    style ={{paddingBottom: '50px'}}
                 >
-                    WellNest recommends to connect to your  Google workspace to match you with a more suitable therapist based on your profile.
+                    WellNest recommends to connect to your  Google workspace to match you with a more suitable therapist based on your profile. 
+                </div>
+                <div 
+                    className={classes.secondLine}
+                    style={{fontWeight: 'bold', paddingBottom: '50px'}}
+                >
+                    If you choose not to connect to the Google Workspace, you will still be matched to a therapist 
                 </div>
                 <div 
                     className={classes.buttonContainer} 
@@ -73,7 +78,7 @@ const GoogleConfirmCard = ({ handleSwipe,}) => {
                         }}
                         onClick={() => handleSwipe(2)}
                     >
-                        Cancel
+                        Not Now
                     </Button>
                     <Button 
                         variant="contained" 
@@ -84,7 +89,7 @@ const GoogleConfirmCard = ({ handleSwipe,}) => {
                         }}
                         onClick={() => handleSwipe(2)}
                     >
-                        Confirm
+                        Connect
                     </Button>
                 </div>
                 <div 
