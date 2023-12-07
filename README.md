@@ -21,6 +21,10 @@ Our technology stack at WellNest comprises:
 
 Our style guide at WellNest comprises:
 
+Link to deployed style guide (Webpage version): https://shorturl.at/apPRW (NOTE: Sometimes the EC2 instance that the Style Guide is deployed on might be down. If the given link is not available, then please try https://shorturl.at/imOW5) 
+
+Links to deployed style guide (Figma Version): https://www.figma.com/file/kXwRCduYYEFUiCFLXOC7g7/SRID_WellNest?type=design&node-id=717-15964&mode=design&t=YanCxY8THByIQi8A-0
+
 ## Operational Instructions
 
 In the project directory, you can run:
