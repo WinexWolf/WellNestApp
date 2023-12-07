@@ -2,6 +2,8 @@ import React from 'react';
 // import { makeStyles } from '@mui/styles';
 import { makeStyles } from "mui-styles";
 import Button from "@mui/material/Button";
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
 
 // Define custom styles
 const useStyles = makeStyles({
@@ -49,6 +51,16 @@ const useStyles = makeStyles({
             boxShadow: '0px 0px 30px rgba(0, 0, 0, 0.25)',
         }
     },
+    modelStyle: {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '60%',
+        backgroundColor: 'white',
+        borderRadius: '10px',
+        padding: '20px',
+    },
     rippleCircle: {
         position: 'absolute',
         top: 0,
@@ -77,8 +89,62 @@ const useStyles = makeStyles({
 
 const FindTherapyCard = ({ handleSwipe }) => {
     const classes = useStyles();
+    const [open, setOpen] = React.useState(false);
+
+    // Set coins/sessions balance
+    const setLocal = (balanceType, balance) => localStorage.setItem(balanceType, balance.toString());
+
+    const getLocal = (balanceType) => {
+        let balance = localStorage.getItem(balanceType);
+        if (!balance || balance < 0) {
+            balance = 0;
+            setLocal(balanceType, balance)
+        } else {
+            balance = parseInt(balance, 10);
+        }
+        return balance;
+    }
+
+    const handleButtonClick = () => {
+        var balance = getLocal('sessions_balance');
+        if (balance > 0) {
+            handleSwipe(1);
+        } else {
+            setOpen(true);
+        }
+    }
     return (
         <div className={classes.background}>
+            <Modal
+                open={open}
+                onClose={() => setOpen(false)}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box className={classes.modelStyle}>
+                    <div style={{ textAlign: 'center' }}>
+                        <div className={classes.smallContent}>
+                            You have insufficient sessions balance.
+                        </div>
+                    </div>
+                    <div style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "end",
+                        paddingTop: '20px'
+                    }}>
+                        <Button
+                            variant="contained"
+                            style={{
+                                backgroundColor: '#0087E8',
+                            }}
+                            onClick={() => setOpen(false)}
+                        >
+                            Ok
+                        </Button>
+                    </div>
+                </Box>
+            </Modal>
             <div className={classes.flexContainer}>
                 <div className={classes.firstLine}>
                     Find Your Therapist Today!
@@ -92,7 +158,7 @@ const FindTherapyCard = ({ handleSwipe }) => {
                     color="primary"
                     style={{ backgroundColor: "#0087E8" }}
                     onClick={() => {
-                        handleSwipe(1);
+                        handleButtonClick();
                     }}
                 >
                     <span className={classes.rippleCircle}></span>

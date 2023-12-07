@@ -53,7 +53,20 @@ const MatchingMainPage = () => {
     // Set coins/sessions balance
     const setLocal = (balanceType, balance) => localStorage.setItem(balanceType, balance.toString());
 
-    const [balance, setBalance] = useState(getLocal('sessions_balance'));
+    const initBalance = () => {
+        var balance = getLocal('sessions_balance');
+        var isInit = getLocal('is_init');
+        if (isInit == 0) {
+            balance = 5;
+            setLocal('sessions_balance', balance);
+        }
+        setLocal('is_init', 1);
+
+        return balance;
+
+    }
+
+    const [balance, setBalance] = useState(initBalance());
 
     return (
         <div className={classes.flexContainer}>
