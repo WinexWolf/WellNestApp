@@ -49,14 +49,14 @@ const Mood8 = () => {
       setMessages([...messages, { text: newMessage, isMine: true }]);
       setNewMessage("");
 
-      const selectedMood = localStorage.getItem("userMood") || "";
+      /* const selectedMood = localStorage.getItem("userMood") || "";
       if (selectedMood) {
         setMessages([
           ...messages,
           { text: selectedMood, isMine: false },
           { text: "Tell me more.", isMine: false },
         ]);
-      }
+      } */
     }
   };
 
